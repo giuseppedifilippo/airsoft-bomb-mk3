@@ -18,14 +18,17 @@ char hexaKeys[ROWS][COLS] = {
   { 'C', '7', '8', '9' },
   { 'D', '#', '0', '*' }
 };
-byte rowPins[ROWS] = { 52, 50, 48, 46 };  //connect to the row pinouts of the keypad
-byte colPins[COLS] = { 38, 40, 42, 44 };  //connect to the column pinouts of the keypad
+
+//array conenenti i pin per le righe e colonne dei tasti del tastierino 
+byte rowPins[ROWS] = { 52, 50, 48, 46 };  
+byte colPins[COLS] = { 38, 40, 42, 44 };  
+//funzione che inizializza l'oggetto del tastierino
 Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
 
 
-//VARIABILI UNIVERSALI PER IL TIMER
+//VARIABILI UNIVERSALI PER IL TIMER (valori in millisecondi)
 unsigned long timerStart = 0;
-unsigned long timerDuration = 0;  // in millisecondi
+unsigned long timerDuration = 0;  
 unsigned long lastPrint = 0;
 bool timerRunning = false;
 bool timerDone = false;
@@ -74,7 +77,6 @@ void setup() {
   Serial.begin(115200);
   while (true) {
     char customKey = customKeypad.getKey();
-    //Serial.println(customKey);
     if (customKey == '#' && index < 4) {
       index += 1;
       beep();

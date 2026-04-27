@@ -29,16 +29,6 @@ void ticker(unsigned long remaining) {
     static unsigned long curToneDur = TONE_MAX;
     static unsigned int curFreq = FREQ_MIN;
 
-    /*if (!timerRunning) {
-      // Timer fermo: silenzia e resetta lo stato
-      if (toneActive) {
-        noTone(BUZZER_PIN);
-        toneActive = false;
-      }
-      return;
-    }*/
-
-
     if (remaining > WARN_WINDOW_MS) {
       // Fuori dalla finestra: nessun beep
       if (toneActive) {
@@ -78,99 +68,6 @@ void ticker(unsigned long remaining) {
   }
 }
 
-
-
-
-
-
-//funzione per mostrare una barra di progresso per vari tipi di modalità
-/*
-byte zero[] = {
-  B00000,
-  B00000,
-  B00000,
-  B00000,
-  B00000,
-  B00000,
-  B00000,
-  B00000
-};
-byte one[] = {
-  B10000,
-  B10000,
-  B10000,
-  B10000,
-  B10000,
-  B10000,
-  B10000,
-  B10000
-};
-
-byte two[] = {
-  B11000,
-  B11000,
-  B11000,
-  B11000,
-  B11000,
-  B11000,
-  B11000,
-  B11000
-};
-
-byte three[] = {
-  B11100,
-  B11100,
-  B11100,
-  B11100,
-  B11100,
-  B11100,
-  B11100,
-  B11100
-};
-
-byte four[] = {
-  B11110,
-  B11110,
-  B11110,
-  B11110,
-  B11110,
-  B11110,
-  B11110,
-  B11110
-};
-
-byte five[] = {
-  B11111,
-  B11111,
-  B11111,
-  B11111,
-  B11111,
-  B11111,
-  B11111,
-  B11111
-};*/
-
-/*void updateProgressBar(unsigned long count, unsigned long totalCount, int lineToPrintOn) {
-  double factor = totalCount / 80.0;  //See note above!
-  int percent = (count + 1) / factor;
-  int number = percent / 5;
-  int remainder = percent % 5;
-  if (number > 0) {
-    for (int j = 0; j < number; j++) {
-      lcd.setCursor(j, lineToPrintOn);
-      lcd.write(5);
-    }
-  }
-  lcd.setCursor(number, lineToPrintOn);
-  lcd.write(remainder);
-  if (number < 16) {
-    for (int j = number + 1; j <= 16; j++) {
-      lcd.setCursor(j, lineToPrintOn);
-      lcd.write(0);
-    }
-  }
-}*/
-
 void initProgressBarChars() {
     // 5 blocchi parziali (da 1/5 a 5/5 di cella piena)
     byte partial1[8] = {0x10,0x10,0x10,0x10,0x10,0x10,0x10,0x00}; // 1/5
@@ -186,6 +83,7 @@ void initProgressBarChars() {
     lcd.createChar(4, partial5);
 }
 
+//Funzione per aggiornare la barra di progresso
 void updateProgressBar(unsigned long val, unsigned long total) {
     // Riga 0: percentuale
     /*unsigned int percent = (unsigned int)((val * 100UL) / total);
@@ -215,7 +113,8 @@ void updateProgressBar(unsigned long val, unsigned long total) {
         }
     }
 }
-//funzione per aggionare il timer a schermo, prende come argomento il tempo passato dall inizio timer da gestire dal chiamante
+
+//Funzione per aggionare il timer a schermo, prende come argomento il tempo passato dall inizio timer da gestire dal chiamante
 void aggiornaCountdown(unsigned long remaining) {
   static char lastLine[17] = "";
 
