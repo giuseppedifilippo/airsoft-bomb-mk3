@@ -9,7 +9,7 @@ lista di possibili valori da salvare in mameria
 
 */
 
-char* settings[] = { "tempo disarmo", "beep bomba", "tipo disinnesco", "tempo buzzer", "" };
+char* settings[] = { "tempo disarmo", "beep bomba", "tipo disinnesco", "tempo buzzer" };
 char* disinnesco[] = { "codice", "pressione", "off" };
 void impostazioni() {
   int setIndex = 0;
@@ -28,7 +28,7 @@ void impostazioni() {
       index += 1;
       beep();
       lcd.setCursor(0, 1);
-      lcd.print(modes[index]);
+      lcd.print(settings[index]);
     } else if (customKey == '*' && setIndex >= 1) {
       beep();
       index -= 1;

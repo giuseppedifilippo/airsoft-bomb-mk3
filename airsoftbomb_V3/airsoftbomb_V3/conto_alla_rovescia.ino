@@ -20,6 +20,7 @@ void timer() {
   tmp = inputTimer();
   unsigned long green_light = tmp * 60000;
   preGame(green_light);
+   unsigned long gameStartTime = millis(); 
   while (true) {
     unsigned long elapsed = millis() - gameStartTime;
     unsigned long remaining = (elapsed < GAME_DURATION)
