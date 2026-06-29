@@ -151,6 +151,7 @@ int inputTimer() {
     }
     //IGNORA L INPUT SE è BCD
     if (forbidden.indexOf(customKey) != -1) {
+      Serial.println(customKey);
       continue;
     }
 
@@ -162,6 +163,7 @@ int inputTimer() {
         lcd.setCursor(0, 1);
         check = false;
         inputBuffer += String(customKey);
+        Serial.println(customKey);
       } else {
         beep();
         inputBuffer += String(customKey);
@@ -170,6 +172,7 @@ int inputTimer() {
         lcd.print(customKey);
         lcd.setCursor(1, 1);
         check = true;
+        Serial.println(customKey);
       }
     }
     if (inputBuffer.length() >= 3) {
@@ -219,7 +222,7 @@ void beep() {
 }
 
 
-//funzione da invocare per tornare al menù di partenza
+//funzione da invocare prima di chiudere la funzione di una modalità e tornare al menù di partenza
 void menu() {
   lcd.clear();
   lcd.setCursor(0, 0);

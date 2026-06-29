@@ -7,21 +7,22 @@ DISPOTIVO CHE FUNGE DA VARI TIPI DI OBIETTIVO PER VARIE GIOCATE SOFTAIR
 #include <EEPROM.h>
 //inizializza istanza lcd
 LiquidCrystal_I2C lcd(0x27, 16, 2);
-#define BUZZER_PIN 24
+#define BUZZER_PIN 7
+#define SIRENA 16
 //PARAMETRI PER IL TASTIERINO ALFANUMERICO
 const byte ROWS = 4;  //four rows
 const byte COLS = 4;  //four columns
 //define the symbols on the buttons of the keypads
 char hexaKeys[ROWS][COLS] = {
-  { 'A', '3', '2', '1' },
-  { 'B', '4', '5', '6' },
-  { 'C', '7', '8', '9' },
-  { 'D', '#', '0', '*' }
+  { 'D', '#', '0', '*' },
+  { 'C', '9', '8', '7' },
+  { 'B', '6', '5', '4' },
+  { 'A', '3', '2', '1' }
 };
 
 //array conenenti i pin per le righe e colonne dei tasti del tastierino 
-byte rowPins[ROWS] = { 52, 50, 48, 46 };  
-byte colPins[COLS] = { 38, 40, 42, 44 };  
+byte rowPins[ROWS] = { 26, 27, 28, 29 };  
+byte colPins[COLS] = { 30, 31, 32, 33 };  
 //funzione che inizializza l'oggetto del tastierino
 Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
 
@@ -40,7 +41,7 @@ String inputBuffer = "";
 String forbidden = "*#BCD";  //caratteri da ignorare per certe sequenze di input
 
 // ---- PIN CONFIGURATION ----
-const int BTN_PIN[3] = { 8, 9, 10 };
+const int BTN_PIN[3] = { 23, 24, 25 };
 const String BTN_NAME[3] = { "AMERICA", "CINA", "RUSSIA" };
 
 //ARRAY DELLE VARIE MODALITà
