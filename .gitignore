@@ -1,0 +1,7 @@
+# KiCad
+*.kicad_prl
+*.lck
+*.bak
+
+# Cache e cronologia
+.history/
