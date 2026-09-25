@@ -6,7 +6,7 @@ DISPOTIVO CHE FUNGE DA VARI TIPI DI OBIETTIVO PER VARIE GIOCATE SOFTAIR
 #include <Keypad.h>
 #include <EEPROM.h>
 //inizializza istanza lcd
-LiquidCrystal_I2C lcd(0x27, 16, 2);
+LiquidCrystal_I2C lcd(0x27, 20, 4);
 #define BUZZER_PIN 7
 #define SIRENA 16
 //PARAMETRI PER IL TASTIERINO ALFANUMERICO
