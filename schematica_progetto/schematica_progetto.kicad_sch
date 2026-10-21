@@ -452,6 +452,651 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:LED"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LED"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Light emitting diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "LED diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "LED_0_1"
+				(polyline
+					(pts
+						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "LED_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:Q_NMOS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 5.08 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Q_NMOS"
+				(at 5.08 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "N-MOSFET transistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "NMOS N-MOS"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Q_NMOS_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.921 0.381) (xy 3.683 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Q_NMOS_1_1"
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "arduino-library:Arduino_Mega2560_R3_Shield"
 			(pin_names
 				(offset 1.016)
@@ -3309,9 +3954,19 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Pulsanti con LED alimentati a 12 V.\nPulsanti collegati in pulldown\n\n"
+		(exclude_from_sim no)
+		(at 235.458 39.116 0)
+		(effects
+			(font
+				(size 2.032 2.032)
+			)
+		)
+		(uuid "39683113-f77b-4b8f-b477-bae5b79b0fdc")
+	)
 	(text "Batteria 12V"
 		(exclude_from_sim no)
-		(at 33.274 31.75 0)
+		(at 51.054 54.61 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3319,9 +3974,33 @@
 		)
 		(uuid "4dd6ead5-221a-441b-898b-b6c197759f00")
 	)
+	(junction
+		(at 233.68 91.44)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2769ee44-68cd-4ed4-8c07-bbcb28428a13")
+	)
+	(junction
+		(at 233.68 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7c1ff48e-5a58-4df3-8546-c417adac4b3e")
+	)
+	(junction
+		(at 233.68 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d9fb1b84-c44c-4e24-8de8-89b13059c959")
+	)
+	(junction
+		(at 38.1 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "dc2ca45a-c916-49ee-8b49-6fcd656957fd")
+	)
 	(wire
 		(pts
-			(xy 55.88 124.46) (xy 58.42 124.46)
+			(xy 22.86 163.83) (xy 25.4 163.83)
 		)
 		(stroke
 			(width 0)
@@ -3331,7 +4010,7 @@
 	)
 	(wire
 		(pts
-			(xy 16.51 27.94) (xy 26.67 27.94)
+			(xy 34.29 50.8) (xy 44.45 50.8)
 		)
 		(stroke
 			(width 0)
@@ -3341,7 +4020,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 27.94) (xy 26.67 25.4)
+			(xy 44.45 50.8) (xy 44.45 48.26)
 		)
 		(stroke
 			(width 0)
@@ -3351,7 +4030,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 134.62) (xy 58.42 134.62)
+			(xy 22.86 173.99) (xy 25.4 173.99)
 		)
 		(stroke
 			(width 0)
@@ -3361,7 +4040,17 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 20.32) (xy 158.75 24.13)
+			(xy 233.68 59.69) (xy 233.68 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14a9bf83-8f72-4bff-bee5-dfa9df92ffd0")
+	)
+	(wire
+		(pts
+			(xy 147.32 22.86) (xy 147.32 26.67)
 		)
 		(stroke
 			(width 0)
@@ -3371,7 +4060,27 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 25.4) (xy 29.21 25.4)
+			(xy 248.92 67.31) (xy 248.92 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33b78a9a-fe8d-4635-a4ce-c176aa865eb0")
+	)
+	(wire
+		(pts
+			(xy 222.25 59.69) (xy 233.68 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "406d0bfe-73b1-4fdf-ac6d-91ec9db63c99")
+	)
+	(wire
+		(pts
+			(xy 44.45 48.26) (xy 46.99 48.26)
 		)
 		(stroke
 			(width 0)
@@ -3381,7 +4090,17 @@
 	)
 	(wire
 		(pts
-			(xy 143.51 20.32) (xy 143.51 24.13)
+			(xy 233.68 123.19) (xy 233.68 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6982667a-43ef-4e77-80ce-7d98da50e690")
+	)
+	(wire
+		(pts
+			(xy 132.08 22.86) (xy 132.08 26.67)
 		)
 		(stroke
 			(width 0)
@@ -3391,7 +4110,17 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 91.44) (xy 166.37 93.98)
+			(xy 222.25 91.44) (xy 233.68 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "789b09cf-1711-45b8-b2c1-26deb53336e0")
+	)
+	(wire
+		(pts
+			(xy 152.4 124.46) (xy 152.4 127)
 		)
 		(stroke
 			(width 0)
@@ -3401,7 +4130,17 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 25.4) (xy 50.8 25.4)
+			(xy 233.68 59.69) (xy 241.3 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "845aa3bf-5832-40d3-8787-2ba0f0b152cc")
+	)
+	(wire
+		(pts
+			(xy 73.66 48.26) (xy 68.58 48.26)
 		)
 		(stroke
 			(width 0)
@@ -3411,7 +4150,27 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 20.32) (xy 151.13 24.13)
+			(xy 38.1 35.56) (xy 38.1 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ffd9e0c-2946-468f-bf5b-5e5545d58a73")
+	)
+	(wire
+		(pts
+			(xy 233.68 123.19) (xy 241.3 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a40175bb-a7b9-47e2-bc65-087c8ed8056c")
+	)
+	(wire
+		(pts
+			(xy 139.7 22.86) (xy 139.7 26.67)
 		)
 		(stroke
 			(width 0)
@@ -3421,7 +4180,7 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 19.05) (xy 29.21 19.05)
+			(xy 44.45 41.91) (xy 46.99 41.91)
 		)
 		(stroke
 			(width 0)
@@ -3431,7 +4190,17 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 20.32) (xy 166.37 24.13)
+			(xy 248.92 130.81) (xy 248.92 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "afa163e6-988e-454e-b1ca-e5cbea3752eb")
+	)
+	(wire
+		(pts
+			(xy 154.94 22.86) (xy 154.94 26.67)
 		)
 		(stroke
 			(width 0)
@@ -3441,7 +4210,7 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 91.44) (xy 158.75 93.98)
+			(xy 144.78 124.46) (xy 144.78 127)
 		)
 		(stroke
 			(width 0)
@@ -3451,7 +4220,27 @@
 	)
 	(wire
 		(pts
-			(xy 16.51 17.78) (xy 26.67 17.78)
+			(xy 248.92 99.06) (xy 248.92 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b62cc917-7cba-4066-a08c-f68c7df9f5ed")
+	)
+	(wire
+		(pts
+			(xy 233.68 91.44) (xy 233.68 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d01534ed-09b5-4393-8a51-ecbb6f27a58c")
+	)
+	(wire
+		(pts
+			(xy 34.29 40.64) (xy 38.1 40.64)
 		)
 		(stroke
 			(width 0)
@@ -3461,7 +4250,17 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 19.05) (xy 50.8 19.05)
+			(xy 222.25 123.19) (xy 233.68 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed0db8ee-bfd3-49e1-8eee-42adebd60198")
+	)
+	(wire
+		(pts
+			(xy 73.66 41.91) (xy 68.58 41.91)
 		)
 		(stroke
 			(width 0)
@@ -3471,7 +4270,17 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 17.78) (xy 26.67 19.05)
+			(xy 233.68 91.44) (xy 241.3 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f90da8fb-e213-42b2-a073-b0d3da9ef8ee")
+	)
+	(wire
+		(pts
+			(xy 44.45 40.64) (xy 44.45 41.91)
 		)
 		(stroke
 			(width 0)
@@ -3479,8 +4288,28 @@
 		)
 		(uuid "fbca3b01-1d93-4737-9c70-0baf584e130b")
 	)
+	(wire
+		(pts
+			(xy 38.1 40.64) (xy 44.45 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fcc68cbe-1d4e-46f7-a0eb-2c27c449c42f")
+	)
+	(label "GND"
+		(at 233.68 101.6 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0ec017c9-b310-483d-9a18-9ef4f1303465")
+	)
 	(label "SDA_LCD"
-		(at 58.42 55.88 180)
+		(at 25.4 95.25 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3490,7 +4319,7 @@
 		(uuid "0f6c94cc-aa35-449b-ac21-4151f6a10032")
 	)
 	(label "1-col"
-		(at 158.75 20.32 0)
+		(at 147.32 22.86 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3500,7 +4329,7 @@
 		(uuid "184964e5-2ba6-4f35-af51-ebca9a8706a6")
 	)
 	(label "3-riga"
-		(at 151.13 20.32 0)
+		(at 139.7 22.86 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3509,8 +4338,18 @@
 		)
 		(uuid "1c8dffef-3aaa-48e5-b603-869ddfaee911")
 	)
+	(label "+12V"
+		(at 248.92 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1ccb2c02-34bb-46b3-9cd8-29ffd01db20c")
+	)
 	(label "2-col"
-		(at 124.46 88.9 0)
+		(at 91.44 128.27 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3520,7 +4359,7 @@
 		(uuid "1e76923e-1f58-48d1-b9ac-69539c20598c")
 	)
 	(label "GND"
-		(at 55.88 134.62 180)
+		(at 22.86 173.99 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3530,7 +4369,7 @@
 		(uuid "22b8d7e5-64e5-42f0-a4a3-7b1002195e88")
 	)
 	(label "SDA_LCD"
-		(at 166.37 91.44 0)
+		(at 152.4 124.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3540,7 +4379,7 @@
 		(uuid "2ff1249f-f522-4891-bc74-f6c11ce6c2d6")
 	)
 	(label "1-riga"
-		(at 124.46 76.2 0)
+		(at 91.44 115.57 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3549,8 +4388,18 @@
 		)
 		(uuid "30980ca4-d3f6-4c94-8043-ef37b9359ee8")
 	)
+	(label "+12V"
+		(at 38.1 35.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3108e29e-6b94-4b69-9624-ec8eae6a37bd")
+	)
 	(label "3-col"
-		(at 166.37 20.32 0)
+		(at 154.94 22.86 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3560,7 +4409,7 @@
 		(uuid "35e053b6-9265-4582-83de-bd659bec9e99")
 	)
 	(label "4-col"
-		(at 170.18 24.13 0)
+		(at 158.75 26.67 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3569,8 +4418,18 @@
 		)
 		(uuid "3a4995fd-d00b-46ef-9792-77aed077e9e6")
 	)
+	(label "+12V"
+		(at 248.92 46.99 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3b69b05f-8a58-4309-97bf-4fe004be1110")
+	)
 	(label "+5V"
-		(at 151.13 93.98 180)
+		(at 137.16 127 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3579,8 +4438,18 @@
 		)
 		(uuid "40d18a82-dbe5-4806-8df9-fb4928d57774")
 	)
+	(label "GND"
+		(at 248.92 99.06 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "42b55d68-1511-4020-a706-c65f75acba19")
+	)
 	(label "4-riga"
-		(at 124.46 83.82 0)
+		(at 91.44 123.19 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3589,8 +4458,18 @@
 		)
 		(uuid "4ae82e9a-dfa0-466a-98a2-6215758ba08d")
 	)
+	(label "Pulsante1"
+		(at 91.44 135.89 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4c1ee60d-d1c8-4554-9cae-60b854e89171")
+	)
 	(label "GND"
-		(at 152.4 76.2 180)
+		(at 138.43 97.79 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3600,7 +4479,7 @@
 		(uuid "4d497a1b-cf4d-4836-b20a-384291d048bc")
 	)
 	(label "1-riga"
-		(at 143.51 20.32 0)
+		(at 132.08 22.86 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3610,7 +4489,7 @@
 		(uuid "561abfdf-2811-4059-8bb2-77239ec8ff26")
 	)
 	(label "+5V"
-		(at 55.88 124.46 180)
+		(at 22.86 163.83 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3619,8 +4498,18 @@
 		)
 		(uuid "60cdd3db-d8b1-4229-b5f6-00f5b8e3f69a")
 	)
+	(label "Pulsante2"
+		(at 91.44 138.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "656aeb0e-1913-4080-b5cc-524eb5402478")
+	)
 	(label "3-riga"
-		(at 124.46 81.28 0)
+		(at 91.44 120.65 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3630,7 +4519,7 @@
 		(uuid "65ad59e5-b71a-4f1c-94d7-53e129be3398")
 	)
 	(label "GND"
-		(at 55.88 25.4 0)
+		(at 73.66 48.26 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3639,8 +4528,48 @@
 		)
 		(uuid "679f0132-50ee-404f-a882-f191eaa6d389")
 	)
+	(label "LED_Pulsante1"
+		(at 91.44 161.29 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "68794d7e-877d-410e-9a84-d4c077e09342")
+	)
 	(label "GND"
-		(at 158.75 91.44 180)
+		(at 233.68 69.85 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "687a45dc-f926-434a-a5d0-d7aee6b82e0d")
+	)
+	(label "GND"
+		(at 248.92 130.81 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6c5aee5f-a1d7-4d4e-8c7c-61a96f638533")
+	)
+	(label "LED_Pulsante2"
+		(at 91.44 163.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6eee8c48-2ab6-4d9b-89b8-89493c195047")
+	)
+	(label "GND"
+		(at 144.78 124.46 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3650,7 +4579,7 @@
 		(uuid "6f557a5c-e431-4234-aeb6-598120c0cd23")
 	)
 	(label "SCL_LCD"
-		(at 58.42 58.42 180)
+		(at 25.4 97.79 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3660,7 +4589,7 @@
 		(uuid "7a4a7244-dea8-4799-ba04-5b2467a2d401")
 	)
 	(label "2-col"
-		(at 162.56 24.13 0)
+		(at 151.13 26.67 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3670,7 +4599,7 @@
 		(uuid "7cdb68d5-5b26-4f13-b7c7-3ac6be4c92a5")
 	)
 	(label "GND"
-		(at 148.59 63.5 180)
+		(at 142.24 72.39 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3679,8 +4608,28 @@
 		)
 		(uuid "82d73168-5a48-4779-9ab0-32d7a8ef28a0")
 	)
+	(label "LED_Pulsante1"
+		(at 222.25 59.69 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "83fcd766-900e-410e-ac62-68f400721077")
+	)
+	(label "+12V"
+		(at 248.92 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "85e7f439-78fe-444b-a409-f10cc73fad6e")
+	)
 	(label "4-riga"
-		(at 154.94 24.13 0)
+		(at 143.51 26.67 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3690,7 +4639,7 @@
 		(uuid "8f70ba9c-70ed-4784-a485-6769a45b475d")
 	)
 	(label "2-riga"
-		(at 147.32 24.13 0)
+		(at 135.89 26.67 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3700,7 +4649,7 @@
 		(uuid "8f8a02f0-e24d-4e65-a245-2e37851f896a")
 	)
 	(label "VIN_sirena"
-		(at 152.4 71.12 180)
+		(at 138.43 92.71 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3709,8 +4658,28 @@
 		)
 		(uuid "907c5de5-8614-41f9-b1ab-1b4893b32829")
 	)
+	(label "LED_Pulsante3"
+		(at 91.44 166.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "947b581f-2544-4235-a8ee-8e46d044bc66")
+	)
+	(label "GND"
+		(at 248.92 67.31 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9509ac33-c3c6-4499-ac9c-ff13e9baaa92")
+	)
 	(label "1-col"
-		(at 124.46 86.36 0)
+		(at 91.44 125.73 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3720,7 +4689,7 @@
 		(uuid "a5214cc8-3661-4c8a-93ea-3c70e42b8784")
 	)
 	(label "buzzIN"
-		(at 148.59 58.42 180)
+		(at 142.24 67.31 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3730,7 +4699,7 @@
 		(uuid "a7c86aea-96f6-4d06-b9b1-f1612f4012d5")
 	)
 	(label "buzzIN"
-		(at 124.46 48.26 0)
+		(at 91.44 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3739,8 +4708,38 @@
 		)
 		(uuid "a8d99e45-5efe-4d9f-9bcc-8a0e43a3c97b")
 	)
+	(label "LED_Pulsante3"
+		(at 222.25 123.19 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bb34dbb2-7bb3-405c-a1d6-6d62fe6203be")
+	)
+	(label "GND"
+		(at 233.68 133.35 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "bd620396-b9b1-49cc-9bcc-67c8fd33d78c")
+	)
+	(label "Pulsante3"
+		(at 91.44 140.97 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c9be7a96-0d54-41a6-98a5-8013f80094e1")
+	)
 	(label "SCL_LCD"
-		(at 172.72 93.98 0)
+		(at 158.75 127 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3750,7 +4749,7 @@
 		(uuid "ccb873d3-a3d0-4e71-90da-42ae1b76f69c")
 	)
 	(label "3-col"
-		(at 124.46 91.44 0)
+		(at 91.44 130.81 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3760,7 +4759,7 @@
 		(uuid "d7912058-cad9-4b41-a0ea-9941775a71ac")
 	)
 	(label "4-col"
-		(at 124.46 93.98 0)
+		(at 91.44 133.35 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3770,7 +4769,7 @@
 		(uuid "daaa4e97-6f86-4f11-b284-dc3e136b26a2")
 	)
 	(label "2-riga"
-		(at 124.46 78.74 0)
+		(at 91.44 118.11 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3780,7 +4779,7 @@
 		(uuid "f0bc8e67-54b0-4714-b389-fa93adbbb52d")
 	)
 	(label "+5V"
-		(at 55.88 19.05 0)
+		(at 73.66 41.91 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3789,8 +4788,18 @@
 		)
 		(uuid "f201974d-8cfc-4971-87fa-8470ac56fcc4")
 	)
+	(label "LED_Pulsante2"
+		(at 222.25 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f59dc973-ee8a-4ca5-bb4d-2728cdd43417")
+	)
 	(label "VIN_sirena"
-		(at 124.46 35.56 0)
+		(at 91.44 74.93 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3801,7 +4810,7 @@
 	)
 	(symbol
 		(lib_id "simboli_personali:4x4_Keypad")
-		(at 152.4 35.56 0)
+		(at 140.97 38.1 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3812,7 +4821,7 @@
 		(fields_autoplaced yes)
 		(uuid "0945757a-6734-43f2-be50-ffd31a147f84")
 		(property "Reference" "96BB2-006-F?"
-			(at 152.4 35.56 0)
+			(at 140.97 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3823,7 +4832,7 @@
 			)
 		)
 		(property "Value" "4x4_Keypad"
-			(at 172.72 40.0049 0)
+			(at 161.29 42.5449 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3834,7 +4843,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 152.4 35.56 0)
+			(at 140.97 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3844,7 +4853,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 35.56 0)
+			(at 140.97 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3854,7 +4863,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 152.4 35.56 0)
+			(at 140.97 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3900,7 +4909,7 @@
 	(symbol
 		(lib_name "buck_converter_1")
 		(lib_id "simboli_personali:buck_converter")
-		(at 38.1 22.86 0)
+		(at 55.88 45.72 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3911,7 +4920,7 @@
 		(fields_autoplaced yes)
 		(uuid "117748a0-922b-4c98-b93d-f4fb08c43582")
 		(property "Reference" "U?"
-			(at 40.5553 15.24 0)
+			(at 58.3353 38.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3922,7 +4931,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 38.1 22.86 0)
+			(at 55.88 45.72 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3932,7 +4941,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 38.1 22.86 0)
+			(at 55.88 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3943,7 +4952,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 38.1 22.86 0)
+			(at 55.88 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3954,7 +4963,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 38.1 22.86 0)
+			(at 55.88 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3986,8 +4995,8 @@
 		)
 	)
 	(symbol
-		(lib_id "simboli_personali:sirena")
-		(at 161.29 73.66 0)
+		(lib_id "Device:Q_NMOS")
+		(at 246.38 91.44 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3995,11 +5004,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4b8c4465-f107-4b9f-ae9f-190fdbf4c0f7")
-		(property "Reference" "U?"
-			(at 161.29 73.66 0)
-			(hide yes)
+		(uuid "28810373-0fd5-4e67-a36b-117573978802")
+		(property "Reference" "IRFZ44N1"
+			(at 255.016 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4009,7 +5016,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 161.29 73.66 0)
+			(at 255.27 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4019,7 +5026,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 161.29 73.66 0)
+			(at 251.46 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4030,7 +5037,91 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 161.29 73.66 0)
+			(at 246.38 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "N-MOSFET transistor"
+			(at 246.38 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "S"
+			(uuid "ec5414b4-0bcb-4918-a7de-8073bb8472ab")
+		)
+		(pin "G"
+			(uuid "82aaa43e-9458-4e63-815b-569d2ca45d0b")
+		)
+		(pin "D"
+			(uuid "46e98e17-59d7-43a1-a271-bd819e18863a")
+		)
+		(instances
+			(project "schematica_progetto"
+				(path "/1679a202-fe25-4627-b878-985126cd6084"
+					(reference "IRFZ44N1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "simboli_personali:sirena")
+		(at 147.32 95.25 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4b8c4465-f107-4b9f-ae9f-190fdbf4c0f7")
+		(property "Reference" "U?"
+			(at 147.32 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 147.32 95.25 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4041,7 +5132,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 161.29 73.66 0)
+			(at 147.32 95.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4068,7 +5159,7 @@
 	)
 	(symbol
 		(lib_id "simboli_personali:2004_LCD_DISPLAY")
-		(at 161.29 104.14 0)
+		(at 147.32 137.16 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4076,10 +5167,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "6a3bcdbd-b6c5-41bf-ad36-7083213e5417")
 		(property "Reference" "DS?"
-			(at 176.53 105.4099 0)
+			(at 162.56 138.4299 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4090,7 +5181,7 @@
 			)
 		)
 		(property "Value" "2004_LCD_DISPLAY_I2C"
-			(at 176.53 107.9499 0)
+			(at 163.83 137.16 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4101,7 +5192,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 152.4 104.14 0)
+			(at 138.43 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4112,7 +5203,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 152.4 104.14 0)
+			(at 138.43 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4123,7 +5214,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 161.29 104.14 0)
+			(at 147.32 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4155,8 +5246,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Buzzer")
-		(at 151.13 60.96 0)
+		(lib_id "Device:LED")
+		(at 248.92 114.3 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4164,10 +5255,190 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
+		(uuid "93cb69de-f956-4a26-bbc3-e5fd44f620a0")
+		(property "Reference" "LED_Pulsante3"
+			(at 257.556 114.554 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BTN"
+			(at 253.746 116.84 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "Pulsante1"
+			(at 248.92 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 248.92 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 248.92 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e50199a6-2fa9-4686-abd7-b37299933e08")
+		)
+		(pin "2"
+			(uuid "a290820a-1cc2-484f-b974-3503f9fd5654")
+		)
+		(instances
+			(project "schematica_progetto"
+				(path "/1679a202-fe25-4627-b878-985126cd6084"
+					(reference "LED_Pulsante3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 248.92 50.8 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "97abea69-f4da-458d-8eca-725cf99ec82a")
+		(property "Reference" "LED_Pulsante1"
+			(at 257.556 51.054 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BTN"
+			(at 253.492 54.102 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "Pulsante1"
+			(at 248.92 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 248.92 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 248.92 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "239849d1-7a09-43c3-82c6-ea40d164691b")
+		)
+		(pin "2"
+			(uuid "e5294629-7baa-4f58-9d25-75b10786cbbe")
+		)
+		(instances
+			(project "schematica_progetto"
+				(path "/1679a202-fe25-4627-b878-985126cd6084"
+					(reference "LED_Pulsante1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Buzzer")
+		(at 144.78 69.85 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
 		(uuid "9bcb9891-2d3f-4a9a-ae07-8508de5ac8a7")
 		(property "Reference" "BZ?"
-			(at 154.94 59.6899 0)
+			(at 148.59 68.5799 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4178,7 +5449,7 @@
 			)
 		)
 		(property "Value" "Buzzer"
-			(at 154.94 62.2299 0)
+			(at 148.844 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4189,7 +5460,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 150.495 58.42 90)
+			(at 144.145 67.31 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4200,7 +5471,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 150.495 58.42 90)
+			(at 144.145 67.31 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4211,7 +5482,7 @@
 			)
 		)
 		(property "Description" "Buzzer, polarized"
-			(at 151.13 60.96 0)
+			(at 144.78 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4237,8 +5508,262 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED")
+		(at 248.92 82.55 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9fd08025-3400-443d-badb-8524bcf99b01")
+		(property "Reference" "LED_Pulsante2"
+			(at 257.556 82.55 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BTN"
+			(at 253.746 84.582 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "Pulsante1"
+			(at 248.92 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 248.92 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 248.92 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f145d2de-9dc4-480c-820f-ba466aa2b081")
+		)
+		(pin "2"
+			(uuid "a0b23701-eba3-4f93-bf99-0181d8b9b364")
+		)
+		(instances
+			(project "schematica_progetto"
+				(path "/1679a202-fe25-4627-b878-985126cd6084"
+					(reference "LED_Pulsante2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Q_NMOS")
+		(at 246.38 123.19 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a8d2ed9e-b0f7-4501-a3e4-f24381691d0d")
+		(property "Reference" "IRFZ44N2"
+			(at 255.016 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 255.27 123.19 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 251.46 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "N-MOSFET transistor"
+			(at 246.38 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "S"
+			(uuid "ac272ee2-3fc6-4c47-ad1d-9c57db688ee0")
+		)
+		(pin "G"
+			(uuid "49075674-cf8c-4153-897e-4c257a4aa2a6")
+		)
+		(pin "D"
+			(uuid "10f780f6-f357-4933-94bb-c85b44903793")
+		)
+		(instances
+			(project "schematica_progetto"
+				(path "/1679a202-fe25-4627-b878-985126cd6084"
+					(reference "IRFZ44N2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 233.68 129.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "aee5c1a8-b053-43b2-99dd-da2b7e220e49")
+		(property "Reference" "R3"
+			(at 236.22 128.2699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10K"
+			(at 236.22 130.8099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 231.902 129.54 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 233.68 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 233.68 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "52962594-532d-4e78-a5bc-35fcfd514f71")
+		)
+		(pin "1"
+			(uuid "cb695634-6595-404c-9c1f-7093d9a8d1d4")
+		)
+		(instances
+			(project "schematica_progetto"
+				(path "/1679a202-fe25-4627-b878-985126cd6084"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "arduino-library:Arduino_Mega2560_R3_Shield")
-		(at 91.44 90.17 0)
+		(at 58.42 129.54 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4249,7 +5774,7 @@
 		(fields_autoplaced yes)
 		(uuid "c97883cb-fe19-48a3-af3b-1edcd04bcf54")
 		(property "Reference" "A1"
-			(at 91.44 151.13 0)
+			(at 58.42 190.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4259,7 +5784,7 @@
 			)
 		)
 		(property "Value" "Arduino_Mega2560_R3_Shield"
-			(at 91.44 153.67 0)
+			(at 58.42 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4269,7 +5794,7 @@
 			)
 		)
 		(property "Footprint" "PCM_arduino-library:Arduino_Mega2560_R3_Shield"
-			(at 91.44 163.83 0)
+			(at 58.42 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4280,7 +5805,7 @@
 			)
 		)
 		(property "Datasheet" "https://docs.arduino.cc/hardware/mega-2560"
-			(at 91.44 160.02 0)
+			(at 58.42 199.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4291,7 +5816,7 @@
 			)
 		)
 		(property "Description" "Shield for Arduino Mega 2560 R3"
-			(at 91.44 90.17 0)
+			(at 58.42 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4584,8 +6109,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Battery")
-		(at 16.51 22.86 0)
+		(lib_id "Device:R")
+		(at 233.68 97.79 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4594,9 +6119,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "f5cfcf29-976a-4843-8794-3f49e6d952f6")
-		(property "Reference" "BT?"
-			(at 20.32 21.0184 0)
+		(uuid "cad94b71-29ef-403c-83dc-da0e02091823")
+		(property "Reference" "R2"
+			(at 236.22 96.5199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4606,8 +6131,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Battery"
-			(at 20.32 23.5584 0)
+		(property "Value" "10K"
+			(at 236.22 99.0599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4618,7 +6143,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 16.51 21.336 90)
+			(at 231.902 97.79 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4629,7 +6154,253 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 16.51 21.336 90)
+			(at 233.68 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 233.68 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "104b59b0-7a45-474d-9354-2a14b3811855")
+		)
+		(pin "1"
+			(uuid "87f447e0-dcf0-4dd8-8665-14dfa00caaa2")
+		)
+		(instances
+			(project "schematica_progetto"
+				(path "/1679a202-fe25-4627-b878-985126cd6084"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Q_NMOS")
+		(at 246.38 59.69 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d26162bc-d99a-4e05-bf12-5634698af495")
+		(property "Reference" "IRFZ44N"
+			(at 255.016 59.69 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 255.27 59.69 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 251.46 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "N-MOSFET transistor"
+			(at 246.38 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "S"
+			(uuid "c553b659-551e-4fac-ba30-8ba383ceb93f")
+		)
+		(pin "G"
+			(uuid "4791d922-3171-4706-b5d6-67cf33e1a937")
+		)
+		(pin "D"
+			(uuid "1b265c01-c15e-4e21-a49c-362495d9e483")
+		)
+		(instances
+			(project "schematica_progetto"
+				(path "/1679a202-fe25-4627-b878-985126cd6084"
+					(reference "IRFZ44N")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 233.68 66.04 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d986b7f7-73d2-4702-9a21-72a7b55b3380")
+		(property "Reference" "R1"
+			(at 236.22 64.7699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10K"
+			(at 236.22 67.3099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 231.902 66.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 233.68 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 233.68 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "93678251-b81f-4642-af7c-9584356ed5df")
+		)
+		(pin "1"
+			(uuid "8e602d17-e6ab-4446-a1bd-8365c802d888")
+		)
+		(instances
+			(project "schematica_progetto"
+				(path "/1679a202-fe25-4627-b878-985126cd6084"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Battery")
+		(at 34.29 45.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f5cfcf29-976a-4843-8794-3f49e6d952f6")
+		(property "Reference" "BT?"
+			(at 38.1 43.8784 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Battery"
+			(at 38.862 45.466 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 34.29 44.196 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 34.29 44.196 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4640,7 +6411,7 @@
 			)
 		)
 		(property "Description" "Multiple-cell battery"
-			(at 16.51 22.86 0)
+			(at 34.29 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4651,7 +6422,7 @@
 			)
 		)
 		(property "Sim.Device" "V"
-			(at 16.51 22.86 0)
+			(at 34.29 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4662,7 +6433,7 @@
 			)
 		)
 		(property "Sim.Type" "DC"
-			(at 16.51 22.86 0)
+			(at 34.29 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4673,7 +6444,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=+ 2=-"
-			(at 16.51 22.86 0)
+			(at 34.29 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
