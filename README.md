@@ -22,6 +22,7 @@ N.B. ogni partita finisce con la vittoria di uno schieramento
 ****
 ## BOM
 <img src="BOM.png" width="550" align="center">
+
 ****
 ## Diagramma di flusso
 <img src="diagramma_flusso.png" width="550" align="center">
