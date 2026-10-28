@@ -20,6 +20,11 @@ N.B. ogni partita finisce con la vittoria di uno schieramento
   La squadra di attacco vince se riesce a portare la bomba all'obiettivo senza farla esplodere prima dello scadere del tempo.
   La squadra in difesa vince se riesce a impedire l'arrivo della valigia all'obiettivo fino allo scadere del tempo.
 ****
-# BOM
+## BOM
 <img src="BOM.png" width="550" align="center">
+****
+## Diagramma di flusso
 ![|350](diagramma_flusso.png)
+****
+## Schematica
+**<img src="BOM.png" width="550" align="center">**
