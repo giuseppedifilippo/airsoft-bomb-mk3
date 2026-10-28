@@ -3832,6 +3832,235 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "simboli_personali:ADXL345"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "ADXL345_0_1"
+				(rectangle
+					(start -2.54 3.81)
+					(end 13.97 -16.51)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "ADXL345_1_1"
+				(text "ADXL345"
+					(at 8.636 -6.604 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 2.54 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 -2.54 0)
+					(length 2.54)
+					(name "CS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 -5.08 0)
+					(length 2.54)
+					(name "INT1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 -7.62 0)
+					(length 2.54)
+					(name "INT2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 -10.16 0)
+					(length 2.54)
+					(name "SDO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 -12.7 0)
+					(length 2.54)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -5.08 -15.24 0)
+					(length 2.54)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "simboli_personali:sirena"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3956,7 +4185,7 @@
 	)
 	(text "Pulsanti con LED alimentati a 12 V.\nPulsanti collegati in pulldown\n\n"
 		(exclude_from_sim no)
-		(at 235.458 39.116 0)
+		(at 235.458 22.606 0)
 		(effects
 			(font
 				(size 2.032 2.032)
@@ -3975,19 +4204,25 @@
 		(uuid "4dd6ead5-221a-441b-898b-b6c197759f00")
 	)
 	(junction
-		(at 233.68 91.44)
+		(at 233.68 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2769ee44-68cd-4ed4-8c07-bbcb28428a13")
 	)
 	(junction
-		(at 233.68 123.19)
+		(at 223.52 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6f691a64-bcef-4516-8d56-df444681fb39")
+	)
+	(junction
+		(at 233.68 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7c1ff48e-5a58-4df3-8546-c417adac4b3e")
 	)
 	(junction
-		(at 233.68 59.69)
+		(at 233.68 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d9fb1b84-c44c-4e24-8de8-89b13059c959")
@@ -4040,7 +4275,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 59.69) (xy 233.68 62.23)
+			(xy 233.68 43.18) (xy 233.68 45.72)
 		)
 		(stroke
 			(width 0)
@@ -4060,7 +4295,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 67.31) (xy 248.92 64.77)
+			(xy 248.92 50.8) (xy 248.92 48.26)
 		)
 		(stroke
 			(width 0)
@@ -4070,13 +4305,23 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 59.69) (xy 233.68 59.69)
+			(xy 222.25 43.18) (xy 233.68 43.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "406d0bfe-73b1-4fdf-ac6d-91ec9db63c99")
+	)
+	(wire
+		(pts
+			(xy 223.52 142.24) (xy 223.52 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "420a7372-d7e7-4afc-b5d4-84d7c56be8d6")
 	)
 	(wire
 		(pts
@@ -4090,7 +4335,17 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 123.19) (xy 233.68 125.73)
+			(xy 212.09 142.24) (xy 223.52 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49f6f135-d62c-49d1-9c4e-288db697bbd1")
+	)
+	(wire
+		(pts
+			(xy 233.68 106.68) (xy 233.68 109.22)
 		)
 		(stroke
 			(width 0)
@@ -4110,7 +4365,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 91.44) (xy 233.68 91.44)
+			(xy 222.25 74.93) (xy 233.68 74.93)
 		)
 		(stroke
 			(width 0)
@@ -4130,7 +4385,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 59.69) (xy 241.3 59.69)
+			(xy 233.68 43.18) (xy 241.3 43.18)
 		)
 		(stroke
 			(width 0)
@@ -4160,13 +4415,23 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 123.19) (xy 241.3 123.19)
+			(xy 233.68 106.68) (xy 241.3 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "a40175bb-a7b9-47e2-bc65-087c8ed8056c")
+	)
+	(wire
+		(pts
+			(xy 238.76 149.86) (xy 238.76 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "abf0816e-1ed0-452e-8197-f7ea117499a8")
 	)
 	(wire
 		(pts
@@ -4180,6 +4445,16 @@
 	)
 	(wire
 		(pts
+			(xy 223.52 142.24) (xy 231.14 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae7b1848-70bb-44d0-9634-c5805c1c3a2d")
+	)
+	(wire
+		(pts
 			(xy 44.45 41.91) (xy 46.99 41.91)
 		)
 		(stroke
@@ -4190,7 +4465,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 130.81) (xy 248.92 128.27)
+			(xy 248.92 114.3) (xy 248.92 111.76)
 		)
 		(stroke
 			(width 0)
@@ -4220,7 +4495,7 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 99.06) (xy 248.92 96.52)
+			(xy 248.92 82.55) (xy 248.92 80.01)
 		)
 		(stroke
 			(width 0)
@@ -4230,13 +4505,23 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 91.44) (xy 233.68 93.98)
+			(xy 233.68 74.93) (xy 233.68 77.47)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "d01534ed-09b5-4393-8a51-ecbb6f27a58c")
+	)
+	(wire
+		(pts
+			(xy 238.76 133.35) (xy 238.76 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0cec828-0d0a-43f2-a92f-94ce3540274d")
 	)
 	(wire
 		(pts
@@ -4250,7 +4535,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 123.19) (xy 233.68 123.19)
+			(xy 222.25 106.68) (xy 233.68 106.68)
 		)
 		(stroke
 			(width 0)
@@ -4270,7 +4555,7 @@
 	)
 	(wire
 		(pts
-			(xy 233.68 91.44) (xy 241.3 91.44)
+			(xy 233.68 74.93) (xy 241.3 74.93)
 		)
 		(stroke
 			(width 0)
@@ -4299,7 +4584,7 @@
 		(uuid "fcc68cbe-1d4e-46f7-a0eb-2c27c449c42f")
 	)
 	(label "GND"
-		(at 233.68 101.6 270)
+		(at 233.68 85.09 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4308,15 +4593,15 @@
 		)
 		(uuid "0ec017c9-b310-483d-9a18-9ef4f1303465")
 	)
-	(label "SDA_LCD"
-		(at 25.4 95.25 180)
+	(label "3V3"
+		(at 134.62 96.52 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "0f6c94cc-aa35-449b-ac21-4151f6a10032")
+		(uuid "13814497-d2c5-4569-bbbe-a982b9258e78")
 	)
 	(label "1-col"
 		(at 147.32 22.86 0)
@@ -4327,6 +4612,16 @@
 			(justify bottom)
 		)
 		(uuid "184964e5-2ba6-4f35-af51-ebca9a8706a6")
+	)
+	(label "GND"
+		(at 134.62 104.14 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "197f6295-2126-4a95-91c6-f4661cd2aae6")
 	)
 	(label "3-riga"
 		(at 139.7 22.86 0)
@@ -4339,7 +4634,7 @@
 		(uuid "1c8dffef-3aaa-48e5-b603-869ddfaee911")
 	)
 	(label "+12V"
-		(at 248.92 110.49 180)
+		(at 248.92 93.98 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4368,7 +4663,7 @@
 		)
 		(uuid "22b8d7e5-64e5-42f0-a4a3-7b1002195e88")
 	)
-	(label "SDA_LCD"
+	(label "SDA"
 		(at 152.4 124.46 0)
 		(effects
 			(font
@@ -4419,7 +4714,7 @@
 		(uuid "3a4995fd-d00b-46ef-9792-77aed077e9e6")
 	)
 	(label "+12V"
-		(at 248.92 46.99 180)
+		(at 248.92 30.48 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4439,7 +4734,7 @@
 		(uuid "40d18a82-dbe5-4806-8df9-fb4928d57774")
 	)
 	(label "GND"
-		(at 248.92 99.06 270)
+		(at 248.92 82.55 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4468,16 +4763,6 @@
 		)
 		(uuid "4c1ee60d-d1c8-4554-9cae-60b854e89171")
 	)
-	(label "GND"
-		(at 138.43 97.79 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "4d497a1b-cf4d-4836-b20a-384291d048bc")
-	)
 	(label "1-riga"
 		(at 132.08 22.86 0)
 		(effects
@@ -4488,6 +4773,16 @@
 		)
 		(uuid "561abfdf-2811-4059-8bb2-77239ec8ff26")
 	)
+	(label "+12V"
+		(at 238.76 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "59ecf731-a54e-455b-b819-c67edf5b4df6")
+	)
 	(label "+5V"
 		(at 22.86 163.83 180)
 		(effects
@@ -4497,6 +4792,16 @@
 			(justify right bottom)
 		)
 		(uuid "60cdd3db-d8b1-4229-b5f6-00f5b8e3f69a")
+	)
+	(label "SDA"
+		(at 134.62 109.22 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "64df80f5-c51f-4f9f-b9e4-90dc024ad8e5")
 	)
 	(label "Pulsante2"
 		(at 91.44 138.43 0)
@@ -4539,7 +4844,7 @@
 		(uuid "68794d7e-877d-410e-9a84-d4c077e09342")
 	)
 	(label "GND"
-		(at 233.68 69.85 270)
+		(at 233.68 53.34 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4549,7 +4854,17 @@
 		(uuid "687a45dc-f926-434a-a5d0-d7aee6b82e0d")
 	)
 	(label "GND"
-		(at 248.92 130.81 270)
+		(at 238.76 149.86 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "68cdd858-5631-4242-944b-bff9a7e3254e")
+	)
+	(label "GND"
+		(at 248.92 114.3 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4578,16 +4893,6 @@
 		)
 		(uuid "6f557a5c-e431-4234-aeb6-598120c0cd23")
 	)
-	(label "SCL_LCD"
-		(at 25.4 97.79 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "7a4a7244-dea8-4799-ba04-5b2467a2d401")
-	)
 	(label "2-col"
 		(at 151.13 26.67 0)
 		(effects
@@ -4609,7 +4914,7 @@
 		(uuid "82d73168-5a48-4779-9ab0-32d7a8ef28a0")
 	)
 	(label "LED_Pulsante1"
-		(at 222.25 59.69 180)
+		(at 222.25 43.18 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4619,7 +4924,7 @@
 		(uuid "83fcd766-900e-410e-ac62-68f400721077")
 	)
 	(label "+12V"
-		(at 248.92 78.74 180)
+		(at 248.92 62.23 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4648,16 +4953,6 @@
 		)
 		(uuid "8f8a02f0-e24d-4e65-a245-2e37851f896a")
 	)
-	(label "VIN_sirena"
-		(at 138.43 92.71 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "907c5de5-8614-41f9-b1ab-1b4893b32829")
-	)
 	(label "LED_Pulsante3"
 		(at 91.44 166.37 0)
 		(effects
@@ -4669,7 +4964,7 @@
 		(uuid "947b581f-2544-4235-a8ee-8e46d044bc66")
 	)
 	(label "GND"
-		(at 248.92 67.31 270)
+		(at 248.92 50.8 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4709,7 +5004,7 @@
 		(uuid "a8d99e45-5efe-4d9f-9bcc-8a0e43a3c97b")
 	)
 	(label "LED_Pulsante3"
-		(at 222.25 123.19 180)
+		(at 222.25 106.68 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4719,7 +5014,7 @@
 		(uuid "bb34dbb2-7bb3-405c-a1d6-6d62fe6203be")
 	)
 	(label "GND"
-		(at 233.68 133.35 270)
+		(at 233.68 116.84 270)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4727,6 +5022,16 @@
 			(justify right bottom)
 		)
 		(uuid "bd620396-b9b1-49cc-9bcc-67c8fd33d78c")
+	)
+	(label "VIN_sirena"
+		(at 212.09 142.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c6e0acda-4e54-43b1-bfb6-6cd8e13d1cd6")
 	)
 	(label "Pulsante3"
 		(at 91.44 140.97 0)
@@ -4738,7 +5043,7 @@
 		)
 		(uuid "c9be7a96-0d54-41a6-98a5-8013f80094e1")
 	)
-	(label "SCL_LCD"
+	(label "SCL"
 		(at 158.75 127 0)
 		(effects
 			(font
@@ -4747,6 +5052,16 @@
 			(justify bottom)
 		)
 		(uuid "ccb873d3-a3d0-4e71-90da-42ae1b76f69c")
+	)
+	(label "SCL"
+		(at 134.62 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "cd2d5a69-7596-4da7-927c-63a6fdb4b313")
 	)
 	(label "3-col"
 		(at 91.44 130.81 0)
@@ -4768,6 +5083,16 @@
 		)
 		(uuid "daaa4e97-6f86-4f11-b284-dc3e136b26a2")
 	)
+	(label "GND"
+		(at 223.52 152.4 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e665bfeb-364a-42bf-81d6-d8bef8e73c9c")
+	)
 	(label "2-riga"
 		(at 91.44 118.11 0)
 		(effects
@@ -4788,8 +5113,18 @@
 		)
 		(uuid "f201974d-8cfc-4971-87fa-8470ac56fcc4")
 	)
+	(label "3V3"
+		(at 134.62 93.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f4409422-7bcd-46d9-ae34-96825f098bfd")
+	)
 	(label "LED_Pulsante2"
-		(at 222.25 91.44 180)
+		(at 222.25 74.93 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4807,6 +5142,16 @@
 			(justify left bottom)
 		)
 		(uuid "f95b46af-437f-4a92-866a-7819d91c86dd")
+	)
+	(label "GND"
+		(at 134.62 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fa6e21c2-17fa-42ee-8944-19b35fc3b3a5")
 	)
 	(symbol
 		(lib_id "simboli_personali:4x4_Keypad")
@@ -4996,7 +5341,7 @@
 	)
 	(symbol
 		(lib_id "Device:Q_NMOS")
-		(at 246.38 91.44 0)
+		(at 246.38 74.93 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5006,7 +5351,7 @@
 		(dnp no)
 		(uuid "28810373-0fd5-4e67-a36b-117573978802")
 		(property "Reference" "IRFZ44N1"
-			(at 255.016 91.44 0)
+			(at 255.016 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5016,7 +5361,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 255.27 91.44 90)
+			(at 255.27 74.93 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5026,7 +5371,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 251.46 88.9 0)
+			(at 251.46 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5037,7 +5382,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 246.38 91.44 0)
+			(at 246.38 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5048,7 +5393,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor"
-			(at 246.38 91.44 0)
+			(at 246.38 74.93 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5077,8 +5422,8 @@
 		)
 	)
 	(symbol
-		(lib_id "simboli_personali:sirena")
-		(at 147.32 95.25 0)
+		(lib_id "Device:R")
+		(at 223.52 148.59 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5087,30 +5432,31 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "4b8c4465-f107-4b9f-ae9f-190fdbf4c0f7")
-		(property "Reference" "U?"
-			(at 147.32 95.25 0)
-			(hide yes)
+		(uuid "64aa166b-d77a-4358-8665-73659a2e9123")
+		(property "Reference" "R4"
+			(at 226.06 147.3199 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" ""
-			(at 147.32 95.25 0)
+		(property "Value" "10K"
+			(at 226.06 149.8599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 147.32 95.25 0)
+			(at 221.742 148.59 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5121,7 +5467,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 147.32 95.25 0)
+			(at 223.52 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5131,8 +5477,8 @@
 				)
 			)
 		)
-		(property "Description" ""
-			(at 147.32 95.25 0)
+		(property "Description" "Resistor"
+			(at 223.52 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5142,16 +5488,16 @@
 				)
 			)
 		)
-		(pin ""
-			(uuid "6342c3e2-0533-4f10-a0e2-e1769c23b80e")
+		(pin "2"
+			(uuid "43569e93-b68f-4cbd-b2fa-b679c475ddf2")
 		)
-		(pin ""
-			(uuid "67d705ca-33ca-45a3-9339-a8122ac5eb67")
+		(pin "1"
+			(uuid "a349bf29-fc30-4ecf-94cc-cef9c84c2396")
 		)
 		(instances
 			(project "schematica_progetto"
 				(path "/1679a202-fe25-4627-b878-985126cd6084"
-					(reference "U?")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -5247,7 +5593,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 248.92 114.3 90)
+		(at 248.92 97.79 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5257,7 +5603,7 @@
 		(dnp no)
 		(uuid "93cb69de-f956-4a26-bbc3-e5fd44f620a0")
 		(property "Reference" "LED_Pulsante3"
-			(at 257.556 114.554 90)
+			(at 257.556 98.044 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5267,7 +5613,7 @@
 			)
 		)
 		(property "Value" "BTN"
-			(at 253.746 116.84 90)
+			(at 253.746 100.33 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5277,7 +5623,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 248.92 114.3 0)
+			(at 248.92 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5288,7 +5634,7 @@
 			)
 		)
 		(property "Datasheet" "Pulsante1"
-			(at 248.92 114.3 0)
+			(at 248.92 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5299,7 +5645,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 248.92 114.3 0)
+			(at 248.92 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5310,7 +5656,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 248.92 114.3 0)
+			(at 248.92 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5337,7 +5683,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 248.92 50.8 90)
+		(at 248.92 34.29 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5347,7 +5693,7 @@
 		(dnp no)
 		(uuid "97abea69-f4da-458d-8eca-725cf99ec82a")
 		(property "Reference" "LED_Pulsante1"
-			(at 257.556 51.054 90)
+			(at 257.556 34.544 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5357,7 +5703,7 @@
 			)
 		)
 		(property "Value" "BTN"
-			(at 253.492 54.102 90)
+			(at 253.492 37.592 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5367,7 +5713,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 248.92 50.8 0)
+			(at 248.92 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5378,7 +5724,7 @@
 			)
 		)
 		(property "Datasheet" "Pulsante1"
-			(at 248.92 50.8 0)
+			(at 248.92 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5389,7 +5735,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 248.92 50.8 0)
+			(at 248.92 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5400,7 +5746,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 248.92 50.8 0)
+			(at 248.92 34.29 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5509,7 +5855,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 248.92 82.55 90)
+		(at 248.92 66.04 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5519,7 +5865,7 @@
 		(dnp no)
 		(uuid "9fd08025-3400-443d-badb-8524bcf99b01")
 		(property "Reference" "LED_Pulsante2"
-			(at 257.556 82.55 90)
+			(at 257.556 66.04 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5529,7 +5875,7 @@
 			)
 		)
 		(property "Value" "BTN"
-			(at 253.746 84.582 90)
+			(at 253.746 68.072 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5539,7 +5885,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 248.92 82.55 0)
+			(at 248.92 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5550,7 +5896,7 @@
 			)
 		)
 		(property "Datasheet" "Pulsante1"
-			(at 248.92 82.55 0)
+			(at 248.92 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5561,7 +5907,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 248.92 82.55 0)
+			(at 248.92 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5572,7 +5918,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 248.92 82.55 0)
+			(at 248.92 66.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5598,8 +5944,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Q_NMOS")
-		(at 246.38 123.19 0)
+		(lib_id "simboli_personali:sirena")
+		(at 247.65 130.81 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5607,9 +5953,11 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "a8d2ed9e-b0f7-4501-a3e4-f24381691d0d")
-		(property "Reference" "IRFZ44N2"
-			(at 255.016 123.19 0)
+		(fields_autoplaced yes)
+		(uuid "a7d02f9e-2e5e-4234-a204-4916c0899213")
+		(property "Reference" "U2"
+			(at 247.65 130.81 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5619,7 +5967,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 255.27 123.19 90)
+			(at 247.65 130.81 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5629,7 +5977,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 251.46 120.65 0)
+			(at 247.65 130.81 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5640,7 +5988,86 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 246.38 123.19 0)
+			(at 247.65 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 247.65 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin ""
+			(uuid "081aed45-7348-4b26-b074-849d08f3e8bf")
+		)
+		(pin ""
+			(uuid "670926b3-710a-4bfa-bbcc-061b259fc32b")
+		)
+		(instances
+			(project "schematica_progetto"
+				(path "/1679a202-fe25-4627-b878-985126cd6084"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Q_NMOS")
+		(at 246.38 106.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a8d2ed9e-b0f7-4501-a3e4-f24381691d0d")
+		(property "Reference" "IRFZ44N2"
+			(at 255.016 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 255.27 106.68 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 251.46 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5651,7 +6078,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor"
-			(at 246.38 123.19 0)
+			(at 246.38 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5681,7 +6108,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 233.68 129.54 0)
+		(at 233.68 113.03 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5692,7 +6119,7 @@
 		(fields_autoplaced yes)
 		(uuid "aee5c1a8-b053-43b2-99dd-da2b7e220e49")
 		(property "Reference" "R3"
-			(at 236.22 128.2699 0)
+			(at 236.22 111.7599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5703,7 +6130,7 @@
 			)
 		)
 		(property "Value" "10K"
-			(at 236.22 130.8099 0)
+			(at 236.22 114.2999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5714,7 +6141,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.902 129.54 90)
+			(at 231.902 113.03 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5725,7 +6152,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 233.68 129.54 0)
+			(at 233.68 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5736,7 +6163,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 233.68 129.54 0)
+			(at 233.68 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5756,6 +6183,105 @@
 			(project "schematica_progetto"
 				(path "/1679a202-fe25-4627-b878-985126cd6084"
 					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "simboli_personali:ADXL345")
+		(at 139.7 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b5ada5c9-7047-4c26-bd27-0a26d67f55cf")
+		(property "Reference" "U1"
+			(at 139.7 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 139.7 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 139.7 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin ""
+			(uuid "1578f883-cb5e-4f0a-8395-4aea52401388")
+		)
+		(pin ""
+			(uuid "3c0c0ed5-810c-4753-9123-9086784ee396")
+		)
+		(pin ""
+			(uuid "12cb72e9-0cfc-4ab1-8f1b-f24b214e0dd6")
+		)
+		(pin ""
+			(uuid "5337c48e-ffb9-4a04-be3c-5f587c2496b4")
+		)
+		(pin ""
+			(uuid "039d3cf7-e5d3-4f4a-96b0-255621ea1840")
+		)
+		(pin ""
+			(uuid "6ff26193-8836-4d52-a3e4-9ba4a09fa8fb")
+		)
+		(pin ""
+			(uuid "2902f768-65a3-44fd-80f0-fb65b406810a")
+		)
+		(pin ""
+			(uuid "5842f221-0a0d-4480-8f81-0f3c65d11727")
+		)
+		(instances
+			(project "schematica_progetto"
+				(path "/1679a202-fe25-4627-b878-985126cd6084"
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -6110,7 +6636,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 233.68 97.79 0)
+		(at 233.68 81.28 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6121,7 +6647,7 @@
 		(fields_autoplaced yes)
 		(uuid "cad94b71-29ef-403c-83dc-da0e02091823")
 		(property "Reference" "R2"
-			(at 236.22 96.5199 0)
+			(at 236.22 80.0099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6132,7 +6658,7 @@
 			)
 		)
 		(property "Value" "10K"
-			(at 236.22 99.0599 0)
+			(at 236.22 82.5499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6143,7 +6669,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.902 97.79 90)
+			(at 231.902 81.28 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6154,7 +6680,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 233.68 97.79 0)
+			(at 233.68 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6165,7 +6691,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 233.68 97.79 0)
+			(at 233.68 81.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6192,7 +6718,7 @@
 	)
 	(symbol
 		(lib_id "Device:Q_NMOS")
-		(at 246.38 59.69 0)
+		(at 246.38 43.18 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6202,7 +6728,7 @@
 		(dnp no)
 		(uuid "d26162bc-d99a-4e05-bf12-5634698af495")
 		(property "Reference" "IRFZ44N"
-			(at 255.016 59.69 0)
+			(at 255.016 43.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6212,7 +6738,7 @@
 			)
 		)
 		(property "Value" ""
-			(at 255.27 59.69 90)
+			(at 255.27 43.18 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6222,7 +6748,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 251.46 57.15 0)
+			(at 251.46 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6233,7 +6759,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 246.38 59.69 0)
+			(at 246.38 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6244,7 +6770,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor"
-			(at 246.38 59.69 0)
+			(at 246.38 43.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6274,7 +6800,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 233.68 66.04 0)
+		(at 233.68 49.53 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6285,7 +6811,7 @@
 		(fields_autoplaced yes)
 		(uuid "d986b7f7-73d2-4702-9a21-72a7b55b3380")
 		(property "Reference" "R1"
-			(at 236.22 64.7699 0)
+			(at 236.22 48.2599 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6296,7 +6822,7 @@
 			)
 		)
 		(property "Value" "10K"
-			(at 236.22 67.3099 0)
+			(at 236.22 50.7999 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6307,7 +6833,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.902 66.04 90)
+			(at 231.902 49.53 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6318,7 +6844,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 233.68 66.04 0)
+			(at 233.68 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6329,7 +6855,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 233.68 66.04 0)
+			(at 233.68 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6464,6 +6990,88 @@
 			(project "schematica_progetto"
 				(path "/1679a202-fe25-4627-b878-985126cd6084"
 					(reference "BT?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Q_NMOS")
+		(at 236.22 142.24 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fd358e19-7cda-4751-8b7d-9a9ff39507a4")
+		(property "Reference" "IRFZ44N3"
+			(at 244.856 142.24 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 245.11 142.24 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 241.3 139.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 236.22 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "N-MOSFET transistor"
+			(at 236.22 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "S"
+			(uuid "e3f6ee64-26a4-45bb-a7b5-b2220a2d060d")
+		)
+		(pin "G"
+			(uuid "199cb515-2dc0-4f70-b52a-24a537597870")
+		)
+		(pin "D"
+			(uuid "ba1aa3c9-e843-4870-8fa0-a2e2a2f29583")
+		)
+		(instances
+			(project "schematica_progetto"
+				(path "/1679a202-fe25-4627-b878-985126cd6084"
+					(reference "IRFZ44N3")
 					(unit 1)
 				)
 			)

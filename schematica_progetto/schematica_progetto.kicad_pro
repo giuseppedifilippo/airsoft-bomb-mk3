@@ -517,8 +517,8 @@
     "meta": {
       "version": 5
     },
-    "net_colors": {},
-    "netclass_assignments": {},
+    "net_colors": null,
+    "netclass_assignments": null,
     "netclass_patterns": []
   },
   "pcbnew": {
@@ -662,7 +662,7 @@
         "uuid": "1679a202-fe25-4627-b878-985126cd6084"
       }
     ],
-    "used_designators": "#PWR1-4,A1,D1-4,IRFZ44N1-2,Pulsante2,Pulsante4-5,Q1,R1-3",
+    "used_designators": "U1-2,IRFZ44N3,LED_Pulsante4,R4",
     "variants": []
   },
   "sheets": [
