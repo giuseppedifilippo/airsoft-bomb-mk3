@@ -1,1 +1,1 @@
-![](diagramma_flusso.png)
+![|350](diagramma_flusso.png)
