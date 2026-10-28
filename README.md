@@ -21,5 +21,5 @@ N.B. ogni partita finisce con la vittoria di uno schieramento
   La squadra in difesa vince se riesce a impedire l'arrivo della valigia all'obiettivo fino allo scadere del tempo.
 ****
 # BOM
-<img src="BOM.png" width="350">
+<img src="BOM.png" width="550" align="center">
 ![|350](diagramma_flusso.png)
