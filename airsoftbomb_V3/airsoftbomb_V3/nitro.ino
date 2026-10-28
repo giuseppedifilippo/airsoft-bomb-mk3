@@ -107,10 +107,10 @@ void calibra() {
   Serial.print(F(" Y="));             Serial.print(offsetY, 3);
   Serial.print(F(" Z="));             Serial.println(offsetZ, 3);
 }
+void nitro() {
 
-void setup() {
-  Serial.begin(115200);
-  while (!Serial) { }                    // utile su Leonardo/Micro
+  
+ 
   Wire.begin();
 
   // Verifica che il sensore risponda (DEVID deve valere 0xE5)
@@ -133,9 +133,9 @@ void setup() {
   Serial.print(F("Soglia impostata: "));
   Serial.print(SOGLIA_G, 2);
   Serial.println(F(" g"));
-}
 
-void loop() {
+
+while (true) {
   static unsigned long ultimaLettura = 0;
   if (millis() - ultimaLettura < PERIODO_LETTURA_MS) return;
   ultimaLettura = millis();
@@ -169,4 +169,4 @@ void loop() {
     Serial.print(F(" Z="));   Serial.print(z, 2);
     Serial.println(F(" g"));
   }
-}
+}}

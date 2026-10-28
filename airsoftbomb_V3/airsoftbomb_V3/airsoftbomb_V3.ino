@@ -14,10 +14,10 @@ const byte ROWS = 4;  //four rows
 const byte COLS = 4;  //four columns
 //define the symbols on the buttons of the keypads
 char hexaKeys[ROWS][COLS] = {
-  { 'D', '#', '0', '*' },
-  { 'C', '9', '8', '7' },
-  { 'B', '6', '5', '4' },
-  { 'A', '3', '2', '1' }
+  {'3','2','A','1'},
+  {'9','8','C','7'},
+  {'#','0','D','*'},
+  {'6','5','B','4'}
 };
 
 //array conenenti i pin per le righe e colonne dei tasti del tastierino 
@@ -41,13 +41,13 @@ String inputBuffer = "";
 String forbidden = "*#BCD";  //caratteri da ignorare per certe sequenze di input
 
 // ---- PIN CONFIGURATION ----
-const int BTN_PIN[3] = { 23, 24, 25 };
+const int BTN_PIN[3] = { 45, 46, 47 };
 const String BTN_NAME[3] = { "AMERICA", "CINA", "RUSSIA" };
 
 //ARRAY DELLE VARIE MODALITà
 char* modes[] = { "      BOMBA    ",
                   "    PRESIDIO   ",
-                  "  JUGGERNAUT   ",
+                  "     NITRO     ",
                   "CERCA&DISTRUGGI",
                   " IMPOSTAZIONI  ",
                   "  COUNTDOWN    "};
@@ -98,7 +98,7 @@ void setup() {
           presidio();
           break;
         case 2:
-          juggernaut();
+          nitro();
           break;
         case 3:
           cerca_e_distruggi();
