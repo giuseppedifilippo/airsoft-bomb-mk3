@@ -29,4 +29,4 @@ N.B. ogni partita finisce con la vittoria di uno schieramento
 
 
 ## Schematica
-img src="schematica.png" width="550" align="center">
+<img src="schematica.png" width="550" align="center">
