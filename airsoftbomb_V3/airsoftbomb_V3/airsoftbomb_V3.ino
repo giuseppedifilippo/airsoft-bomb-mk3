@@ -40,7 +40,7 @@ int minuti = 0;
 //Variabili per il sistema di input
 bool check = false;
 String inputBuffer = "";
-String forbidden = "*#BCD";  //caratteri da ignorare per certe sequenze di input
+String forbidden = "*#ABCD";  //caratteri da ignorare per certe sequenze di input
 
 // ---- PIN CONFIGURATION ----
 const int BTN_PIN[3] = { 45, 46, 47 };
@@ -51,8 +51,8 @@ char* modes[] = { "      BOMBA    ",
                   "    PRESIDIO   ",
                   "     NITRO     ",
                   "CERCA&DISTRUGGI",
-                  " IMPOSTAZIONI  ",
-                  "  COUNTDOWN    " };
+                  "   COUNTDOWN   ",
+                  "  IMPOSTAZIONI " };
 
 
 int index = 0;

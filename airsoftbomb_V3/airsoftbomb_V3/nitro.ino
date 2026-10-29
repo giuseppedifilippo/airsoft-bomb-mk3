@@ -1,7 +1,7 @@
 /*la squadra di attacco deve trasportare a passo moderato la valigetta a un obiettivo entro il tempo limite*/
 
 
-const float         SOGLIA_G      = 1.5;  // soglia in g (1 g = 9.81 m/s^2)
+const float SOGLIA_G = 1.5;               // soglia in g (1 g = 9.81 m/s^2)
 const unsigned long DURATA_MIN_MS = 200;  // tempo minimo continuo sopra soglia
 
 
@@ -9,27 +9,28 @@ const unsigned long DURATA_MIN_MS = 200;  // tempo minimo continuo sopra soglia
 bool controllaADXL345(float sogliaG = 1.5,
                       unsigned long durataMinMs = 200,
                       bool compensaGravita = true,
-                      uint8_t indirizzo = 0x53)
-{
+                      uint8_t indirizzo = 0x53) {
   // ---------- Costanti ----------
-  const uint8_t REG_DEVID       = 0x00;
-  const uint8_t REG_BW_RATE     = 0x2C;
-  const uint8_t REG_POWER_CTL   = 0x2D;
+  const uint8_t REG_DEVID = 0x00;
+  const uint8_t REG_BW_RATE = 0x2C;
+  const uint8_t REG_POWER_CTL = 0x2D;
   const uint8_t REG_DATA_FORMAT = 0x31;
-  const uint8_t REG_DATAX0      = 0x32;
-  const float   SCALA_G         = 0.0039;      // 3.9 mg/LSB in full resolution
-  const unsigned long PERIODO_LETTURA_MS = 10; // ~100 letture al secondo
-  const char    NOMI_ASSI[3]    = {'X', 'Y', 'Z'};
+  const uint8_t REG_DATAX0 = 0x32;
+  const float SCALA_G = 0.0039;                 // 3.9 mg/LSB in full resolution
+  const unsigned long PERIODO_LETTURA_MS = 10;  // ~100 letture al secondo
+  const char NOMI_ASSI[3] = { 'X', 'Y', 'Z' };
 
   // ---------- Stato interno (mantenuto tra una chiamata e l'altra) ----------
-  enum { DA_INIZIALIZZARE, PRONTO, ERRORE };
+  enum { DA_INIZIALIZZARE,
+         PRONTO,
+         ERRORE };
   static uint8_t stato = DA_INIZIALIZZARE;
-  static float offset[3]              = {0, 0, 0};
-  static bool sopraSoglia[3]          = {false, false, false};
-  static unsigned long inizioSopra[3] = {0, 0, 0};
-  static bool avvisoInviato[3]        = {false, false, false};
-  static float piccoMax[3]            = {0, 0, 0};
-  static unsigned long ultimaLettura  = 0;
+  static float offset[3] = { 0, 0, 0 };
+  static bool sopraSoglia[3] = { false, false, false };
+  static unsigned long inizioSopra[3] = { 0, 0, 0 };
+  static bool avvisoInviato[3] = { false, false, false };
+  static float piccoMax[3] = { 0, 0, 0 };
+  static unsigned long ultimaLettura = 0;
 
   // ---------- Funzioni di supporto (locali) ----------
   auto scriviRegistro = [indirizzo](uint8_t reg, uint8_t valore) {
@@ -56,7 +57,7 @@ bool controllaADXL345(float sogliaG = 1.5,
     if (Wire.available() < 6) return false;
 
     uint8_t b[6];
-    for (int i = 0; i < 6; i++) b[i] = Wire.read();   // ordine garantito
+    for (int i = 0; i < 6; i++) b[i] = Wire.read();  // ordine garantito
     for (int i = 0; i < 3; i++) {
       int16_t raw = (int16_t)((uint16_t)b[2 * i] | ((uint16_t)b[2 * i + 1] << 8));
       v[i] = raw * SCALA_G;
@@ -79,15 +80,15 @@ bool controllaADXL345(float sogliaG = 1.5,
       return false;
     }
 
-    scriviRegistro(REG_BW_RATE, 0x0A);     // 100 Hz
-    scriviRegistro(REG_DATA_FORMAT, 0x0B); // full resolution, +-16 g
-    scriviRegistro(REG_POWER_CTL, 0x08);   // avvia le misure
+    scriviRegistro(REG_BW_RATE, 0x0A);      // 100 Hz
+    scriviRegistro(REG_DATA_FORMAT, 0x0B);  // full resolution, +-16 g
+    scriviRegistro(REG_POWER_CTL, 0x08);    // avvia le misure
     delay(20);
 
     if (compensaGravita) {
       Serial.println(F("ADXL345: calibrazione, tieni il sensore FERMO..."));
       delay(500);
-      float somma[3] = {0, 0, 0}, v[3];
+      float somma[3] = { 0, 0, 0 }, v[3];
       int valide = 0;
       for (int n = 0; n < 50; n++) {
         if (leggiAssi(v)) {
@@ -130,10 +131,10 @@ bool controllaADXL345(float sogliaG = 1.5,
     if (modulo > sogliaG) {
       if (!sopraSoglia[i]) {
         // Inizio di un superamento: parte il timer
-        sopraSoglia[i]   = true;
-        inizioSopra[i]   = adesso;
+        sopraSoglia[i] = true;
+        inizioSopra[i] = adesso;
         avvisoInviato[i] = false;
-        piccoMax[i]      = modulo;
+        piccoMax[i] = modulo;
       } else if (modulo > piccoMax[i]) {
         piccoMax[i] = modulo;
       }
@@ -146,9 +147,12 @@ bool controllaADXL345(float sogliaG = 1.5,
         Serial.print(NOMI_ASSI[i]);
         Serial.print(F(" sopra soglia da "));
         Serial.print(adesso - inizioSopra[i]);
-        Serial.print(F(" ms | X="));  Serial.print(v[0], 2);
-        Serial.print(F(" Y="));       Serial.print(v[1], 2);
-        Serial.print(F(" Z="));       Serial.print(v[2], 2);
+        Serial.print(F(" ms | X="));
+        Serial.print(v[0], 2);
+        Serial.print(F(" Y="));
+        Serial.print(v[1], 2);
+        Serial.print(F(" Z="));
+        Serial.print(v[2], 2);
         Serial.println(F(" g"));
       }
     } else if (sopraSoglia[i]) {
@@ -181,23 +185,13 @@ void nitro() {
   gameStartTime = millis();
   while (true) {
     if (controllaADXL345(SOGLIA_G, DURATA_MIN_MS)) {
-    lcd.clear();
-    beep();
-    lcd.setCursor(0, 0);
-    lcd.print("BOMBA ESPLOSA");
-    delay(1000);
-     //SEQUENZA DI CHIUSURA
-  lcd.clear();
-  lcd.print("premi A per restart");
-  while (true) {
-    char customKey = customKeypad.getKey();
-    if (customKey == 'A') {
-      menu();
-      return;
+      lcd.clear();
+      beep();
+      lcd.setCursor(0, 0);
+      lcd.print("BOMBA ESPLOSA");
+      delay(1000);
+      break;
     }
-  }
-
-  }
     unsigned long elapsed = millis() - gameStartTime;
     unsigned long remaining = (elapsed < GAME_DURATION)
                                 ? GAME_DURATION - elapsed
@@ -212,10 +206,17 @@ void nitro() {
       lcd.setCursor(0, 1);
       lcd.print("DIFESA");
       delay(10000);
+      break;
+    }
+  }
+  //SEQUENZA DI CHIUSURA
+  lcd.clear();
+  lcd.print("premi A per restart");
+  while (true) {
+    char customKey = customKeypad.getKey();
+    if (customKey == 'A') {
       menu();
       return;
+    }
   }
-}}
-
-
-
+}
