@@ -146,6 +146,7 @@ void presidio() {
   while (true) {
     char customKey = customKeypad.getKey();
     if (customKey == 'A') {
+      menu();
       return;
     }
   }

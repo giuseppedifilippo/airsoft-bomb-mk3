@@ -69,24 +69,24 @@ void ticker(unsigned long remaining) {
 }
 
 void initProgressBarChars() {
-    // 5 blocchi parziali (da 1/5 a 5/5 di cella piena)
-    byte partial1[8] = {0x10,0x10,0x10,0x10,0x10,0x10,0x10,0x00}; // 1/5
-    byte partial2[8] = {0x18,0x18,0x18,0x18,0x18,0x18,0x18,0x00}; // 2/5
-    byte partial3[8] = {0x1C,0x1C,0x1C,0x1C,0x1C,0x1C,0x1C,0x00}; // 3/5
-    byte partial4[8] = {0x1E,0x1E,0x1E,0x1E,0x1E,0x1E,0x1E,0x00}; // 4/5
-    byte partial5[8] = {0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x00}; // 5/5 (pieno)
+  // 5 blocchi parziali (da 1/5 a 5/5 di cella piena)
+  byte partial1[8] = { 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x00 };  // 1/5
+  byte partial2[8] = { 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x00 };  // 2/5
+  byte partial3[8] = { 0x1C, 0x1C, 0x1C, 0x1C, 0x1C, 0x1C, 0x1C, 0x00 };  // 3/5
+  byte partial4[8] = { 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x00 };  // 4/5
+  byte partial5[8] = { 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x00 };  // 5/5 (pieno)
 
-    lcd.createChar(0, partial1);
-    lcd.createChar(1, partial2);
-    lcd.createChar(2, partial3);
-    lcd.createChar(3, partial4);
-    lcd.createChar(4, partial5);
+  lcd.createChar(0, partial1);
+  lcd.createChar(1, partial2);
+  lcd.createChar(2, partial3);
+  lcd.createChar(3, partial4);
+  lcd.createChar(4, partial5);
 }
 
 //Funzione per aggiornare la barra di progresso
 void updateProgressBar(unsigned long val, unsigned long total) {
-    // Riga 0: percentuale
-    /*unsigned int percent = (unsigned int)((val * 100UL) / total);
+  // Riga 0: percentuale
+  /*unsigned int percent = (unsigned int)((val * 100UL) / total);
     lcd.setCursor(0, 0);
     lcd.print("Progress: ");
     if (percent < 10)  lcd.print("  ");
@@ -94,24 +94,24 @@ void updateProgressBar(unsigned long val, unsigned long total) {
     lcd.print(percent);
     lcd.print("%");*/
 
-    // Riga 1: barra grafica
-    // 16 colonne x 5 pixel-colonne = 80 "pixel" orizzontali totali
-    const uint8_t BAR_COLS = 16;
-    unsigned long pixels = (val * (unsigned long)(BAR_COLS * 5)) / total;
+  // Riga 1: barra grafica
+  // 16 colonne x 5 pixel-colonne = 80 "pixel" orizzontali totali
+  const uint8_t BAR_COLS = 20;
+  unsigned long pixels = (val * (unsigned long)(BAR_COLS * 5)) / total;
 
-    uint8_t fullBlocks  = pixels / 5;   // celle completamente piene
-    uint8_t remainder   = pixels % 5;   // pixel parziali nell'ultima cella
+  uint8_t fullBlocks = pixels / 5;  // celle completamente piene
+  uint8_t remainder = pixels % 5;   // pixel parziali nell'ultima cella
 
-    lcd.setCursor(0, 1);
-    for (uint8_t i = 0; i < BAR_COLS; i++) {
-        if (i < fullBlocks) {
-            lcd.write(byte(4));      // blocco pieno
-        } else if (i == fullBlocks && remainder > 0) {
-            lcd.write(byte(remainder - 1)); // blocco parziale (char 0..3)
-        } else {
-            lcd.print(" ");          // spazio vuoto
-        }
+  lcd.setCursor(0, 1);
+  for (uint8_t i = 0; i < BAR_COLS; i++) {
+    if (i < fullBlocks) {
+      lcd.write(byte(4));  // blocco pieno
+    } else if (i == fullBlocks && remainder > 0) {
+      lcd.write(byte(remainder - 1));  // blocco parziale (char 0..3)
+    } else {
+      lcd.print(" ");  // spazio vuoto
     }
+  }
 }
 
 //Funzione per aggionare il timer a schermo, prende come argomento il tempo passato dall inizio timer da gestire dal chiamante
@@ -141,7 +141,11 @@ int inputTimer() {
   lcd.setCursor(0, 1);
   lcd.cursor();
   while (true) {
+    
     char customKey = customKeypad.getKey();
+    if (!customKey){
+      continue;
+    }
     if (customKey == 'A' && inputBuffer != "") {  //avvia il timer con il valore indicato se premuto il pulsante A
       minuti = inputBuffer.toInt();
       beep();
@@ -183,7 +187,7 @@ int inputTimer() {
 
 
 //funzione che crea un countdown universale prima di avviare la partita effettiva
-void preGame(unsigned long  COUNTDOWN) {
+void preGame(unsigned long COUNTDOWN) {
   lcd.setCursor(0, 0);
   lcd.print("PREMI B");
   lcd.setCursor(0, 1);
@@ -231,3 +235,7 @@ void menu() {
   lcd.print(modes[index]);
   return;
 }
+
+
+
+

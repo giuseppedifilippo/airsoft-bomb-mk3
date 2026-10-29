@@ -1,172 +1,221 @@
-/*
- * ADXL345 - Avviso su superamento soglia di accelerazione
- * ---------------------------------------------------------
- * Legge l'accelerometro via I2C (senza librerie esterne, solo Wire)
- * e stampa un avviso sul monitor seriale quando l'accelerazione
- * su un qualsiasi asse (X, Y o Z) supera la soglia impostata.
- *
- * Collegamenti (Arduino Uno/Nano):
- *   ADXL345 VCC -> 3.3V
- *   ADXL345 GND -> GND
- *   ADXL345 SDA -> A4
- *   ADXL345 SCL -> A5
- *   ADXL345 CS  -> 3.3V (abilita la modalita' I2C)
- *   ADXL345 SDO -> GND  (indirizzo 0x53; se SDO e' a 3.3V usa 0x1D)
- *
- * Nota: se il tuo modulo non ha regolatore/level shifter,
- * l'ADXL345 non tollera 5V sui pin di segnale.
- */
+/*la squadra di attacco deve trasportare a passo moderato la valigetta a un obiettivo entro il tempo limite*/
 
-#include <Wire.h>
 
-// ===================== CONFIGURAZIONE =====================
-const uint8_t ADXL345_ADDR = 0x53;      // 0x1D se SDO e' collegato a VCC
+const float         SOGLIA_G      = 1.5;  // soglia in g (1 g = 9.81 m/s^2)
+const unsigned long DURATA_MIN_MS = 200;  // tempo minimo continuo sopra soglia
 
-const float SOGLIA_G = 1.5;             // soglia in g (1 g = 9.81 m/s^2)
 
-// Se true, all'avvio misura la posizione a riposo e la sottrae:
-// cosi' la soglia si applica alla VARIAZIONE di accelerazione
-// (la gravita' sull'asse Z non fa scattare falsi allarmi).
-// Se false, si confronta l'accelerazione assoluta (gravita' inclusa).
-const bool COMPENSA_GRAVITA = true;
+/*FUNZIONI UTLITARIE SOLO PER MODALITA NITRO*/
+bool controllaADXL345(float sogliaG = 1.5,
+                      unsigned long durataMinMs = 200,
+                      bool compensaGravita = true,
+                      uint8_t indirizzo = 0x53)
+{
+  // ---------- Costanti ----------
+  const uint8_t REG_DEVID       = 0x00;
+  const uint8_t REG_BW_RATE     = 0x2C;
+  const uint8_t REG_POWER_CTL   = 0x2D;
+  const uint8_t REG_DATA_FORMAT = 0x31;
+  const uint8_t REG_DATAX0      = 0x32;
+  const float   SCALA_G         = 0.0039;      // 3.9 mg/LSB in full resolution
+  const unsigned long PERIODO_LETTURA_MS = 10; // ~100 letture al secondo
+  const char    NOMI_ASSI[3]    = {'X', 'Y', 'Z'};
 
-const unsigned long PAUSA_AVVISI_MS = 500;  // tempo minimo tra due avvisi
-const unsigned long PERIODO_LETTURA_MS = 10; // ~100 letture al secondo
-// ==========================================================
+  // ---------- Stato interno (mantenuto tra una chiamata e l'altra) ----------
+  enum { DA_INIZIALIZZARE, PRONTO, ERRORE };
+  static uint8_t stato = DA_INIZIALIZZARE;
+  static float offset[3]              = {0, 0, 0};
+  static bool sopraSoglia[3]          = {false, false, false};
+  static unsigned long inizioSopra[3] = {0, 0, 0};
+  static bool avvisoInviato[3]        = {false, false, false};
+  static float piccoMax[3]            = {0, 0, 0};
+  static unsigned long ultimaLettura  = 0;
 
-// Registri dell'ADXL345
-const uint8_t REG_DEVID       = 0x00;
-const uint8_t REG_BW_RATE     = 0x2C;
-const uint8_t REG_POWER_CTL   = 0x2D;
-const uint8_t REG_DATA_FORMAT = 0x31;
-const uint8_t REG_DATAX0      = 0x32;
+  // ---------- Funzioni di supporto (locali) ----------
+  auto scriviRegistro = [indirizzo](uint8_t reg, uint8_t valore) {
+    Wire.beginTransmission(indirizzo);
+    Wire.write(reg);
+    Wire.write(valore);
+    Wire.endTransmission();
+  };
 
-// In modalita' full resolution la sensibilita' e' sempre 3.9 mg/LSB
-const float SCALA_G = 0.0039;
+  auto leggiRegistro = [indirizzo](uint8_t reg) -> uint8_t {
+    Wire.beginTransmission(indirizzo);
+    Wire.write(reg);
+    if (Wire.endTransmission(false) != 0) return 0;
+    Wire.requestFrom(indirizzo, (uint8_t)1);
+    return Wire.available() ? Wire.read() : 0;
+  };
 
-float offsetX = 0, offsetY = 0, offsetZ = 0;
-unsigned long ultimoAvviso = 0;
+  // Legge i tre assi in g; restituisce false se la lettura I2C fallisce
+  auto leggiAssi = [indirizzo, REG_DATAX0, SCALA_G](float v[3]) -> bool {
+    Wire.beginTransmission(indirizzo);
+    Wire.write(REG_DATAX0);
+    if (Wire.endTransmission(false) != 0) return false;
+    Wire.requestFrom(indirizzo, (uint8_t)6);
+    if (Wire.available() < 6) return false;
 
-// ---------- Funzioni I2C di base ----------
-void scriviRegistro(uint8_t reg, uint8_t valore) {
-  Wire.beginTransmission(ADXL345_ADDR);
-  Wire.write(reg);
-  Wire.write(valore);
-  Wire.endTransmission();
-}
-
-uint8_t leggiRegistro(uint8_t reg) {
-  Wire.beginTransmission(ADXL345_ADDR);
-  Wire.write(reg);
-  Wire.endTransmission(false);           // repeated start
-  Wire.requestFrom(ADXL345_ADDR, (uint8_t)1);
-  return Wire.available() ? Wire.read() : 0;
-}
-
-// Legge i tre assi in g (lettura burst dei 6 byte di dati)
-bool leggiAccelerazione(float &x, float &y, float &z) {
-  Wire.beginTransmission(ADXL345_ADDR);
-  Wire.write(REG_DATAX0);
-  if (Wire.endTransmission(false) != 0) return false;
-
-  Wire.requestFrom(ADXL345_ADDR, (uint8_t)6);
-  if (Wire.available() < 6) return false;
-
-  // Dati little-endian, complemento a 2
-  int16_t rawX = (int16_t)(Wire.read() | (Wire.read() << 8));
-  int16_t rawY = (int16_t)(Wire.read() | (Wire.read() << 8));
-  int16_t rawZ = (int16_t)(Wire.read() | (Wire.read() << 8));
-
-  x = rawX * SCALA_G;
-  y = rawY * SCALA_G;
-  z = rawZ * SCALA_G;
-  return true;
-}
-
-// Media di alcune letture a sensore fermo
-void calibra() {
-  const int N = 100;
-  float sx = 0, sy = 0, sz = 0, x, y, z;
-  int valide = 0;
-
-  Serial.println(F("Calibrazione: tieni il sensore FERMO..."));
-  delay(500);
-  for (int i = 0; i < N; i++) {
-    if (leggiAccelerazione(x, y, z)) {
-      sx += x; sy += y; sz += z;
-      valide++;
+    uint8_t b[6];
+    for (int i = 0; i < 6; i++) b[i] = Wire.read();   // ordine garantito
+    for (int i = 0; i < 3; i++) {
+      int16_t raw = (int16_t)((uint16_t)b[2 * i] | ((uint16_t)b[2 * i + 1] << 8));
+      v[i] = raw * SCALA_G;
     }
-    delay(10);
+    return true;
+  };
+
+  // ---------- Inizializzazione (solo alla prima chiamata) ----------
+  if (stato == ERRORE) return false;
+
+  if (stato == DA_INIZIALIZZARE) {
+    Wire.begin();
+
+    uint8_t id = leggiRegistro(REG_DEVID);
+    if (id != 0xE5) {
+      Serial.print(F("ERRORE: ADXL345 non trovato (DEVID=0x"));
+      Serial.print(id, HEX);
+      Serial.println(F("). Controlla collegamenti e indirizzo."));
+      stato = ERRORE;
+      return false;
+    }
+
+    scriviRegistro(REG_BW_RATE, 0x0A);     // 100 Hz
+    scriviRegistro(REG_DATA_FORMAT, 0x0B); // full resolution, +-16 g
+    scriviRegistro(REG_POWER_CTL, 0x08);   // avvia le misure
+    delay(20);
+
+    if (compensaGravita) {
+      Serial.println(F("ADXL345: calibrazione, tieni il sensore FERMO..."));
+      delay(500);
+      float somma[3] = {0, 0, 0}, v[3];
+      int valide = 0;
+      for (int n = 0; n < 50; n++) {
+        if (leggiAssi(v)) {
+          for (int i = 0; i < 3; i++) somma[i] += v[i];
+          valide++;
+        }
+        delay(10);
+      }
+      if (valide > 0) {
+        for (int i = 0; i < 3; i++) offset[i] = somma[i] / valide;
+      }
+    }
+
+    Serial.print(F("ADXL345 pronto. Soglia "));
+    Serial.print(sogliaG, 2);
+    Serial.print(F(" g per almeno "));
+    Serial.print(durataMinMs);
+    Serial.println(F(" ms"));
+
+    stato = PRONTO;
+    ultimaLettura = millis();
+    return false;
   }
-  if (valide > 0) {
-    offsetX = sx / valide;
-    offsetY = sy / valide;
-    offsetZ = sz / valide;
+
+  // ---------- Lettura periodica non bloccante ----------
+  unsigned long adesso = millis();
+  if (adesso - ultimaLettura < PERIODO_LETTURA_MS) return false;
+  ultimaLettura = adesso;
+
+  float v[3];
+  if (!leggiAssi(v)) return false;
+  for (int i = 0; i < 3; i++) v[i] -= offset[i];  // offset = 0 se non compensato
+
+  // ---------- Controllo soglia + durata su ogni asse ----------
+  bool nuovoAvviso = false;
+
+  for (int i = 0; i < 3; i++) {
+    float modulo = fabs(v[i]);
+
+    if (modulo > sogliaG) {
+      if (!sopraSoglia[i]) {
+        // Inizio di un superamento: parte il timer
+        sopraSoglia[i]   = true;
+        inizioSopra[i]   = adesso;
+        avvisoInviato[i] = false;
+        piccoMax[i]      = modulo;
+      } else if (modulo > piccoMax[i]) {
+        piccoMax[i] = modulo;
+      }
+
+      // Sopra soglia da abbastanza tempo: avviso (una volta per evento)
+      if (!avvisoInviato[i] && adesso - inizioSopra[i] >= durataMinMs) {
+        avvisoInviato[i] = true;
+        nuovoAvviso = true;
+        Serial.print(F("!!! AVVISO: asse "));
+        Serial.print(NOMI_ASSI[i]);
+        Serial.print(F(" sopra soglia da "));
+        Serial.print(adesso - inizioSopra[i]);
+        Serial.print(F(" ms | X="));  Serial.print(v[0], 2);
+        Serial.print(F(" Y="));       Serial.print(v[1], 2);
+        Serial.print(F(" Z="));       Serial.print(v[2], 2);
+        Serial.println(F(" g"));
+      }
+    } else if (sopraSoglia[i]) {
+      // Tornato sotto soglia: fine evento
+      if (avvisoInviato[i]) {
+        Serial.print(F("    Fine evento asse "));
+        Serial.print(NOMI_ASSI[i]);
+        Serial.print(F(": durata "));
+        Serial.print(adesso - inizioSopra[i]);
+        Serial.print(F(" ms, picco "));
+        Serial.print(piccoMax[i], 2);
+        Serial.println(F(" g"));
+      }
+      // Se e' sceso prima di durataMinMs era un picco breve: ignorato
+      sopraSoglia[i] = false;
+    }
   }
-  Serial.print(F("Offset (g): X="));  Serial.print(offsetX, 3);
-  Serial.print(F(" Y="));             Serial.print(offsetY, 3);
-  Serial.print(F(" Z="));             Serial.println(offsetZ, 3);
+
+  return nuovoAvviso;
 }
+
+
+
 void nitro() {
-
-  
- 
-  Wire.begin();
-
-  // Verifica che il sensore risponda (DEVID deve valere 0xE5)
-  uint8_t id = leggiRegistro(REG_DEVID);
-  if (id != 0xE5) {
-    Serial.print(F("ERRORE: ADXL345 non trovato (DEVID=0x"));
-    Serial.print(id, HEX);
-    Serial.println(F("). Controlla collegamenti e indirizzo."));
-    while (true) { }
+  controllaADXL345(SOGLIA_G, DURATA_MIN_MS);
+  int tmp = inputTimer();
+  const unsigned long GAME_DURATION = 60000 * tmp;
+  unsigned long gameStartTime = 0;
+  preGame(5000);
+  gameStartTime = millis();
+  while (true) {
+    if (controllaADXL345(SOGLIA_G, DURATA_MIN_MS)) {
+    lcd.clear();
+    beep();
+    lcd.setCursor(0, 0);
+    lcd.print("BOMBA ESPLOSA");
+    delay(1000);
+     //SEQUENZA DI CHIUSURA
+  lcd.clear();
+  lcd.print("premi A per restart");
+  while (true) {
+    char customKey = customKeypad.getKey();
+    if (customKey == 'A') {
+      menu();
+      return;
+    }
   }
 
-  scriviRegistro(REG_BW_RATE, 0x0A);     // 100 Hz di output
-  scriviRegistro(REG_DATA_FORMAT, 0x0B); // full resolution, range +-16 g
-  scriviRegistro(REG_POWER_CTL, 0x08);   // avvia le misure
-  delay(20);
-
-  Serial.println(F("ADXL345 pronto."));
-  if (COMPENSA_GRAVITA) calibra();
-
-  Serial.print(F("Soglia impostata: "));
-  Serial.print(SOGLIA_G, 2);
-  Serial.println(F(" g"));
-
-
-while (true) {
-  static unsigned long ultimaLettura = 0;
-  if (millis() - ultimaLettura < PERIODO_LETTURA_MS) return;
-  ultimaLettura = millis();
-
-  float x, y, z;
-  if (!leggiAccelerazione(x, y, z)) {
-    Serial.println(F("Errore di lettura I2C"));
-    return;
   }
-
-  if (COMPENSA_GRAVITA) {
-    x -= offsetX;
-    y -= offsetY;
-    z -= offsetZ;
-  }
-
-  bool superaX = fabs(x) > SOGLIA_G;
-  bool superaY = fabs(y) > SOGLIA_G;
-  bool superaZ = fabs(z) > SOGLIA_G;
-
-  if ((superaX || superaY || superaZ) &&
-      millis() - ultimoAvviso >= PAUSA_AVVISI_MS) {
-    ultimoAvviso = millis();
-
-    Serial.print(F("!!! AVVISO: soglia superata su asse "));
-    if (superaX) Serial.print(F("X "));
-    if (superaY) Serial.print(F("Y "));
-    if (superaZ) Serial.print(F("Z "));
-    Serial.print(F("| X="));  Serial.print(x, 2);
-    Serial.print(F(" Y="));   Serial.print(y, 2);
-    Serial.print(F(" Z="));   Serial.print(z, 2);
-    Serial.println(F(" g"));
+    unsigned long elapsed = millis() - gameStartTime;
+    unsigned long remaining = (elapsed < GAME_DURATION)
+                                ? GAME_DURATION - elapsed
+                                : 0;
+    aggiornaCountdown(remaining);
+    //questo if si occupa di far terminare la partita se scade il tempo
+    if (elapsed > GAME_DURATION) {
+      delay(1000);
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("VINCE");
+      lcd.setCursor(0, 1);
+      lcd.print("DIFESA");
+      delay(10000);
+      menu();
+      return;
   }
 }}
+
+
+

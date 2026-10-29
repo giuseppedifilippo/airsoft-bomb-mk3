@@ -2,7 +2,8 @@
 pensata per la milsim OPERAZIONE BRUNEVOY
 richiede la ricerca di una tessera/codice di attivazione per prendere controllo o disattivare
 il juggernaut, se cambio qualche parole può diventare un comune obiettivo per giocate*/
-
+/*DEPRECATO, IGNORARE*/
+/*
 void juggernaut() {
   //sta prima da capire come mettere il lettore di tessere e il modulo radio
   KeyState state = IDLE;
@@ -88,4 +89,4 @@ void juggMenu() {
   lcd.setCursor(0, 1);
   lcd.print("CONTROLLO (2)");
   return;
-}
+}*/

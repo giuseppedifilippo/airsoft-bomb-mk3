@@ -5,6 +5,8 @@ DISPOTIVO CHE FUNGE DA VARI TIPI DI OBIETTIVO PER VARIE GIOCATE SOFTAIR
 #include <LiquidCrystal_I2C.h>
 #include <Keypad.h>
 #include <EEPROM.h>
+#include <Wire.h>
+
 //inizializza istanza lcd
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 #define BUZZER_PIN 7
@@ -14,22 +16,22 @@ const byte ROWS = 4;  //four rows
 const byte COLS = 4;  //four columns
 //define the symbols on the buttons of the keypads
 char hexaKeys[ROWS][COLS] = {
-  {'3','2','A','1'},
-  {'9','8','C','7'},
-  {'#','0','D','*'},
-  {'6','5','B','4'}
+  { '3', '2', 'A', '1' },
+  { '9', '8', 'C', '7' },
+  { '#', '0', 'D', '*' },
+  { '6', '5', 'B', '4' }
 };
 
-//array conenenti i pin per le righe e colonne dei tasti del tastierino 
-byte rowPins[ROWS] = { 26, 27, 28, 29 };  
-byte colPins[COLS] = { 30, 31, 32, 33 };  
+//array conenenti i pin per le righe e colonne dei tasti del tastierino
+byte rowPins[ROWS] = { 26, 27, 28, 29 };
+byte colPins[COLS] = { 30, 31, 32, 33 };
 //funzione che inizializza l'oggetto del tastierino
 Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
 
 
 //VARIABILI UNIVERSALI PER IL TIMER (valori in millisecondi)
 unsigned long timerStart = 0;
-unsigned long timerDuration = 0;  
+unsigned long timerDuration = 0;
 unsigned long lastPrint = 0;
 bool timerRunning = false;
 bool timerDone = false;
@@ -50,7 +52,7 @@ char* modes[] = { "      BOMBA    ",
                   "     NITRO     ",
                   "CERCA&DISTRUGGI",
                   " IMPOSTAZIONI  ",
-                  "  COUNTDOWN    "};
+                  "  COUNTDOWN    " };
 
 
 int index = 0;
@@ -78,7 +80,7 @@ void setup() {
   Serial.begin(115200);
   while (true) {
     char customKey = customKeypad.getKey();
-    if (customKey == '#' && index < 4) {
+    if (customKey == '#' && index < 5) {
       index += 1;
       beep();
       lcd.setCursor(0, 1);
@@ -103,9 +105,12 @@ void setup() {
         case 3:
           cerca_e_distruggi();
           break;
-        case 4 :
-        impostazioni();
-        break;
+        case 4:
+          timer();
+          break;
+        case 5:
+          impostazioni();
+          break;
       }
     }
   }
