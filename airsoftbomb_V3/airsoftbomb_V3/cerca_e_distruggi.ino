@@ -116,6 +116,7 @@ void cerca_e_distruggi() {
 
           if (!pressed) {
             state = IDLE; 
+            
             updateProgressBar(0, defuseTime);
             ticker(remaining);
           }
@@ -133,6 +134,7 @@ void cerca_e_distruggi() {
       lcd.setCursor(0, 1);
       lcd.print("ATTACCO");
       delay(10000);
+      menu();
       return;
     }
   }
