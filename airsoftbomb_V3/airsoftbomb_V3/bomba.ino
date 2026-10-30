@@ -25,7 +25,7 @@ void bomba() {
                                 ? GAME_DURATION - elapsed
                                 : 0;
     aggiornaCountdown(remaining);
-    if (elapsed < GAME_DURATION && digitalRead(BTN_PIN[1]) == LOW) {
+    if (elapsed < GAME_DURATION && pressed) {
       switch (state) {
 
         case IDLE:
@@ -40,7 +40,6 @@ void bomba() {
         case PRESSED:
           // Aggiorna e stampa "val" ogni ciclo di loop
           val = millis() - pressStart;
-          Serial.println(val);
           ticker(remaining);
           updateProgressBar(val, defuseTime);
           if (val > defuseTime) {
@@ -54,14 +53,15 @@ void bomba() {
             break;
           }
       }
-      if (!pressed) {
+      /*if (!pressed) {
         val = 0;
-        state = IDLE;
+        
         ticker(remaining);
-      }
-    } else {
+      }*/
+    } else if (!pressed) {
       val = 0;
       updateProgressBar(0, defuseTime);
+      state = IDLE;
       ticker(remaining);
     }
 

@@ -13,8 +13,8 @@ void cerca_e_distruggi() {
   delay(1000);
   KeyState state = IDLE;
   unsigned long pressStart = 0;
-  int defuseTime = 20000;            //tempo in ms per il disinnesco
-  unsigned long val = 0;             // ms di pressione in tempo reale
+  int defuseTime = 20000;  //tempo in ms per il disinnesco
+  unsigned long val = 0;   // ms di pressione in tempo reale
   int tmp = inputTimer();
   unsigned long GAME_DURATION = 60000 * tmp;  //tempo totale della partita
   Serial.println(GAME_DURATION);
@@ -39,14 +39,22 @@ void cerca_e_distruggi() {
                                 ? GAME_DURATION - elapsed
                                 : 0;
     aggiornaCountdown(remaining);
+    if (elapsed > GAME_DURATION) {
+      // BOMBA NON PIANTATA PARTITA TERMINATA VINCE SQUADRA DIFESA
+      printVincitore("DIFESA");
+      delay(10000);
+      return;
+    }
     if (count == 1) {
-      lcd.clear();
-      lcd.setCursor(0, 0);
+      //lcd.clear();
+      lcd.setCursor(0, 3);
       lcd.print("ARMAMENTO");
       lcd.setCursor(count, 1);
     }
     char customKey = customKeypad.getKey();
-    if (customKey == '1') {
+    if (!customKey) {
+      continue;
+    } else {
       Serial.println(customKey);
       lcd.setCursor(count, 1);
       lcd.print(customKey);
@@ -54,16 +62,11 @@ void cerca_e_distruggi() {
       count += 1;
     }
     if (count > 7) {
+      lcd.setCursor(0, 3);
       printStatoBomba("ARMATA");
       gameStartTime = millis();
       GAME_DURATION = 60000 * minuti_det;
       break;  // attivare il conto alla rovescia
-    }
-    if (elapsed > GAME_DURATION) {
-      // BOMBA NON PIANTATA PARTITA TERMINATA VINCE SQUADRA DIFESA
-      printVincitore("DIFESA");
-      delay(10000);
-      return;
     }
   }
 
@@ -100,16 +103,19 @@ void cerca_e_distruggi() {
             delay(4000);
             return;
           }
-         
 
-          if (!pressed) {
+
+          /*if (!pressed) {
             state = IDLE; 
             
             updateProgressBar(0, defuseTime);
             ticker(remaining);
-          }
+          }*/
       }
-    } else {
+    } else if (!pressed) {
+      val = 0;
+      updateProgressBar(0, defuseTime);
+      state = IDLE;
       ticker(remaining);
     }
 

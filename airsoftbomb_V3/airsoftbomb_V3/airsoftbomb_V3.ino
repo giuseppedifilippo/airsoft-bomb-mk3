@@ -46,16 +46,17 @@ const int BTN_PIN[3] = { 45, 46, 47 };
 const String BTN_NAME[3] = { "AMERICA", "CINA", "RUSSIA" };
 
 //ARRAY DELLE VARIE MODALITà
-char* modes[] = { "      BOMBA    ",
-                  "    PRESIDIO   ",
-                  "     NITRO     ",
-                  "CERCA&DISTRUGGI",
-                  "   COUNTDOWN   ",
+char* modes[] = { "       BOMBA       ",
+                  "      PRESIDIO     ",
+                  "       NITRO       ",
+                  "  CERCA&DISTRUGGI  ",
+                  "     COUNTDOWN     ",
                   };
 
 
 int index = 0;
 void setup() {
+  Serial.begin(115200);
   pinMode(BUZZER_PIN, OUTPUT);
   for (int i = 0; i < 3; i++) {
     pinMode(BTN_PIN[i], INPUT_PULLUP);  // Pullup interno: LOW = premuto
@@ -68,14 +69,18 @@ void setup() {
   delay(50);
   lcd.print("Difilippo");
   lcd.setCursor(0, 1);  //param1 = X   param2 = Y
-  lcd.print("Industries");
+  lcd.print("Industries &");
+  lcd.setCursor(0, 2);
+  lcd.print("Benassi");
+  lcd.setCursor(0, 3);
+  lcd.print("Productions");
   delay(2000);
-  lcd.setCursor(0, 0);
+  /*lcd.setCursor(0, 0);
   lcd.clear();
-  lcd.print("<* SELEZIONA  #>");
+  lcd.print("<*    SELEZIONA   #>");
   lcd.setCursor(0, 1);
-  lcd.print(modes[index]);
-  Serial.begin(115200);
+  lcd.print(modes[index]);*/
+  menu();
 }
 
 void loop() {

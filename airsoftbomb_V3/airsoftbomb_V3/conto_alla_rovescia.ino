@@ -29,6 +29,8 @@ void timer() {
     aggiornaCountdown(remaining);
     if (digitalRead(BTN_PIN[1]) == LOW) {
       //PARTITA TERMINATA IN ANTICIPO
+      menu();
+      return;
     }
     if (elapsed > GAME_DURATION) {
       //PARTITA TERMINATA

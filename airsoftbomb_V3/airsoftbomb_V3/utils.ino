@@ -230,24 +230,26 @@ void beep() {
 void menu() {
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("<* SELEZIONA  #>");
+  lcd.print("<*    SELEZIONA   #>");
   lcd.setCursor(0, 1);
   lcd.print(modes[index]);
+  lcd.setCursor(0,2);
+  lcd.print("    (A) CONFERMA    ");
   return;
 }
 
 void printVincitore(const String& vincitore){
   lcd.clear();
-  lcd.setCursor(0,0);
+  lcd.setCursor(4,0);
   lcd.print("VINCE");
-  lcd.setCursor(0,1);
+  lcd.setCursor(4,1);
   lcd.print(vincitore);
 }
 
 void printStatoBomba(const String& stato){
   lcd.clear();
-  lcd.setCursor(0,0);
+  lcd.setCursor(5,2);
   lcd.print("BOMBA");
-  lcd.setCursor(0,1);
+  lcd.setCursor(4,3);
   lcd.print(stato);
 }
