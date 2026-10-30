@@ -78,6 +78,9 @@ void setup() {
   lcd.setCursor(0, 1);
   lcd.print(modes[index]);
   Serial.begin(115200);
+}
+
+void loop() {
   while (true) {
     char customKey = customKeypad.getKey();
     if (customKey == '#' && index < 5) {
@@ -114,10 +117,6 @@ void setup() {
       }
     }
   }
-}
-
-void loop() {
-  //lasciare vuoto, il loop viene eseguito nelle varie funzioni che si occupano di gestire le singole modalità
 }
 
 
