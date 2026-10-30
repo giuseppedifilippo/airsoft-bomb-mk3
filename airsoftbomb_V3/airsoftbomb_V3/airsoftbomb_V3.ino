@@ -32,7 +32,6 @@ Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS)
 //VARIABILI UNIVERSALI PER IL TIMER (valori in millisecondi)
 unsigned long timerStart = 0;
 unsigned long timerDuration = 0;
-unsigned long lastPrint = 0;
 bool timerRunning = false;
 bool timerDone = false;
 int minuti = 0;
@@ -52,7 +51,7 @@ char* modes[] = { "      BOMBA    ",
                   "     NITRO     ",
                   "CERCA&DISTRUGGI",
                   "   COUNTDOWN   ",
-                  "  IMPOSTAZIONI " };
+                  };
 
 
 int index = 0;
@@ -73,7 +72,6 @@ void setup() {
   delay(2000);
   lcd.setCursor(0, 0);
   lcd.clear();
-  lcd.setCursor(0, 0);
   lcd.print("<* SELEZIONA  #>");
   lcd.setCursor(0, 1);
   lcd.print(modes[index]);
@@ -81,7 +79,6 @@ void setup() {
 }
 
 void loop() {
-  while (true) {
     char customKey = customKeypad.getKey();
     if (customKey == '#' && index < 5) {
       index += 1;
@@ -111,13 +108,11 @@ void loop() {
         case 4:
           timer();
           break;
-        case 5:
-          impostazioni();
-          break;
+        
       }
     }
   }
-}
+
 
 
 
