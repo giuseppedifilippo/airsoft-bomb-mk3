@@ -211,7 +211,7 @@ void preGame(unsigned long COUNTDOWN) {
     if (startCountdown) {
       aggiornaCountdown(remaining);
       if (elapsed > COUNTDOWN) {
-        tone(BUZZER_PIN, 800, 1000);
+        tone(BUZZER_PIN, 1200, 1000);
         return;
       }
     }

@@ -1,8 +1,8 @@
 /*la squadra di attacco deve trasportare a passo moderato la valigetta a un obiettivo entro il tempo limite*/
 
 
-const float SOGLIA_G = 1.5;               // soglia in g (1 g = 9.81 m/s^2)
-const unsigned long DURATA_MIN_MS = 200;  // tempo minimo continuo sopra soglia
+const float SOGLIA_G = 0.5;               // soglia in g (1 g = 9.81 m/s^2)
+const unsigned long DURATA_MIN_MS = 10;  // tempo minimo continuo sopra soglia
 
 
 /*FUNZIONI UTLITARIE SOLO PER MODALITA NITRO*/
@@ -12,7 +12,9 @@ bool controllaADXL345(float sogliaG = 1.5,
                       uint8_t indirizzo = 0x53) {
   // ---------- Costanti ----------
   const uint8_t REG_DEVID = 0x00;
-  const uint8_t REG_BW_RATE = 0x2C;
+  const uint8_t REG_BW_RATE
+  
+   = 0x2C;
   const uint8_t REG_POWER_CTL = 0x2D;
   const uint8_t REG_DATA_FORMAT = 0x31;
   const uint8_t REG_DATAX0 = 0x32;

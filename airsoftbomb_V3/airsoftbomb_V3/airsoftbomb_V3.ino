@@ -10,7 +10,7 @@ DISPOTIVO CHE FUNGE DA VARI TIPI DI OBIETTIVO PER VARIE GIOCATE SOFTAIR
 //inizializza istanza lcd
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 #define BUZZER_PIN 7
-#define SIRENA 16
+#define SIRENA 12
 //PARAMETRI PER IL TASTIERINO ALFANUMERICO
 const byte ROWS = 4;  //four rows
 const byte COLS = 4;  //four columns
@@ -46,12 +46,13 @@ const int BTN_PIN[3] = { 45, 46, 47 };
 const String BTN_NAME[3] = { "AMERICA", "CINA", "RUSSIA" };
 
 //ARRAY DELLE VARIE MODALITà
-char* modes[] = { "       BOMBA       ",
-                  "      PRESIDIO     ",
-                  "       NITRO       ",
-                  "  CERCA&DISTRUGGI  ",
-                  "     COUNTDOWN     ",
-                  };
+char* modes[] = {
+  "       BOMBA       ",
+  "      PRESIDIO     ",
+  "       NITRO       ",
+  "  CERCA&DISTRUGGI  ",
+  "     COUNTDOWN     ",
+};
 
 
 int index = 0;
@@ -75,48 +76,42 @@ void setup() {
   lcd.setCursor(0, 3);
   lcd.print("Productions");
   delay(2000);
-  /*lcd.setCursor(0, 0);
-  lcd.clear();
-  lcd.print("<*    SELEZIONA   #>");
-  lcd.setCursor(0, 1);
-  lcd.print(modes[index]);*/
   menu();
 }
 
 void loop() {
-    char customKey = customKeypad.getKey();
-    if (customKey == '#' && index < 5) {
-      index += 1;
-      beep();
-      lcd.setCursor(0, 1);
-      lcd.print(modes[index]);
-    } else if (customKey == '*' && index >= 1) {
-      beep();
-      index -= 1;
-      lcd.setCursor(0, 1);
-      lcd.print(modes[index]);
-    } else if (customKey == 'A') {
-      beep();
-      switch (index) {
-        case 0:
-          bomba();
-          break;
-        case 1:
-          presidio();
-          break;
-        case 2:
-          nitro();
-          break;
-        case 3:
-          cerca_e_distruggi();
-          break;
-        case 4:
-          timer();
-          break;
-        
-      }
+  char customKey = customKeypad.getKey();
+  if (customKey == '#' && index < 5) {
+    index += 1;
+    beep();
+    lcd.setCursor(0, 1);
+    lcd.print(modes[index]);
+  } else if (customKey == '*' && index >= 1) {
+    beep();
+    index -= 1;
+    lcd.setCursor(0, 1);
+    lcd.print(modes[index]);
+  } else if (customKey == 'A') {
+    beep();
+    switch (index) {
+      case 0:
+        bomba();
+        break;
+      case 1:
+        presidio();
+        break;
+      case 2:
+        nitro();
+        break;
+      case 3:
+        cerca_e_distruggi();
+        break;
+      case 4:
+        timer();
+        break;
     }
   }
+}
 
 
 
