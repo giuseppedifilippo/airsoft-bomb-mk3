@@ -80,12 +80,8 @@ void presidio() {
               unsigned long ms = t % 1000;
               if (possessTime[i] > possessTime[winner]) winner = i;
             }
-            lcd.clear();
             tone(BUZZER_PIN, 2000, 2000);
-            lcd.setCursor(0,0);
-            lcd.print("VINCE");
-            lcd.setCursor(0,1);
-            lcd.print(BTN_NAME[winner]);
+            printVincitore(BTN_NAME[winner]);
             gameState = FINISHED;
             delay(10000);
             menu();

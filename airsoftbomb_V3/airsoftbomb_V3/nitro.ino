@@ -200,11 +200,7 @@ void nitro() {
     //questo if si occupa di far terminare la partita se scade il tempo
     if (elapsed > GAME_DURATION) {
       delay(1000);
-      lcd.clear();
-      lcd.setCursor(0, 0);
-      lcd.print("VINCE");
-      lcd.setCursor(0, 1);
-      lcd.print("DIFESA");
+      printVincitore("DIFESA");
       delay(10000);
       break;
     }

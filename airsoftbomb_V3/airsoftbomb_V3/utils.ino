@@ -236,6 +236,18 @@ void menu() {
   return;
 }
 
+void printDisinnesca(){
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("BOMBA");
+  lcd.setCursor(0, 1);
+  lcd.print("DISINNESCATA");
+}
 
-
-
+void printVincitore(const String& vincitore){
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("VINCE");
+  lcd.setCursor(0,1);
+  lcd.print(vincitore);
+}

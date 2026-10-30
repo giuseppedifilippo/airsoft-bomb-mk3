@@ -43,11 +43,7 @@ void bomba() {
           ticker(remaining);
           updateProgressBar(val, defuseTime);
           if (val > defuseTime) {
-            lcd.clear();
-            lcd.setCursor(0, 0);
-            lcd.print("BOMBA");
-            lcd.setCursor(0, 1);
-            lcd.print("DISINNESCATA");
+            printDisinnesca();
             timerDone = true;
             timerRunning = false;
             tone(BUZZER_PIN, 1000, 2000);

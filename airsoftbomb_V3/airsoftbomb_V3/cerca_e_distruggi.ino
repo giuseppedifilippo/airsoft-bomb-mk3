@@ -66,11 +66,7 @@ void cerca_e_distruggi() {
     if (elapsed > GAME_DURATION) {
       // BOMBA NON PIANTATA PARTITA TERMINATA VINCE SQUADRA DIFESA
       Serial.println("qui");
-      lcd.clear();
-      lcd.setCursor(0, 0);
-      lcd.print("VINCE");
-      lcd.setCursor(0, 1);
-      lcd.print("DIFESA");
+      printVincitore("DIFESA");
       delay(10000);
       return;
     }
@@ -101,11 +97,7 @@ void cerca_e_distruggi() {
           val = millis() - pressStart;
           Serial.println(val);
           if (val > defuseTime) {
-            lcd.clear();
-            lcd.setCursor(0, 0);
-            lcd.print("BOMBA");
-            lcd.setCursor(0, 1);
-            lcd.print("DISINNESCATA");
+            printDisinnesca();
             timerDone = true;
             timerRunning = false;
             tone(BUZZER_PIN, 1000, 2000);
@@ -128,11 +120,7 @@ void cerca_e_distruggi() {
 
     //LA BOMBA è ESPLOSA SQUADRA ATTACCO VINCE
     if (elapsed > GAME_DURATION) {
-      lcd.clear();
-      lcd.setCursor(0, 0);
-      lcd.print("VINCE");
-      lcd.setCursor(0, 1);
-      lcd.print("ATTACCO");
+      printVincitore("ATTACCO");
       delay(10000);
       menu();
       return;
