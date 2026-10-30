@@ -65,7 +65,6 @@ void cerca_e_distruggi() {
     }
     if (elapsed > GAME_DURATION) {
       // BOMBA NON PIANTATA PARTITA TERMINATA VINCE SQUADRA DIFESA
-      Serial.println("qui");
       printVincitore("DIFESA");
       delay(10000);
       return;
@@ -96,6 +95,7 @@ void cerca_e_distruggi() {
           // Aggiorna e stampa "val" ogni ciclo di loop
           val = millis() - pressStart;
           Serial.println(val);
+          updateProgressBar(val, defuseTime);
           if (val > defuseTime) {
             printDisinnesca();
             timerDone = true;

@@ -16,7 +16,7 @@ void timer() {
   lcd.setCursor(0, 0);
   lcd.print("TEMPO");
   lcd.setCursor(0, 1);
-  lcd.print("LUCE A LUCE VERDE");
+  lcd.print("A LUCE VERDE");
   tmp = inputTimer();
   unsigned long green_light = tmp * 60000;
   preGame(green_light);

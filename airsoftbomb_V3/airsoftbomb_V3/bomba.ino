@@ -18,6 +18,7 @@ void bomba() {
 
   //loop che si occupa effettivamente della giocata
   while (true) {
+
     bool pressed = (digitalRead(BTN_PIN[1]) == LOW);
     unsigned long elapsed = millis() - gameStartTime;
     unsigned long remaining = (elapsed < GAME_DURATION)
@@ -54,11 +55,13 @@ void bomba() {
           }
       }
       if (!pressed) {
+        val = 0;
         state = IDLE;
         ticker(remaining);
-        updateProgressBar(0, defuseTime);
       }
     } else {
+      val = 0;
+      updateProgressBar(0, defuseTime);
       ticker(remaining);
     }
 
