@@ -6,9 +6,9 @@ lista di possibili valori da salvare in mameria
 -sequenza di disinnesco con codice/pressione pulsante
 -finestra allerta buzzer
 -sirena on/off(ci metto un interrutore fisico)
-
+IN DISUSO PER LAVORO FUTURO
 */
-
+/*
 char* settings[] = { "tempo disarmo", "beep bomba", "tipo disinnesco", "tempo buzzer" };
 char* disinnesco[] = { "codice", "pressione", "off" };
 void impostazioni() {
@@ -45,3 +45,4 @@ void impostazioni() {
 //aggiorna i valori salvati sulla eeprom
 void updateSettings() {
 }
+*/
