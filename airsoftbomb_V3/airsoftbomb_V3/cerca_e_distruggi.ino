@@ -54,11 +54,7 @@ void cerca_e_distruggi() {
       count += 1;
     }
     if (count > 7) {
-      lcd.clear();
-      lcd.setCursor(0, 0);
-      lcd.print("BOMBA");
-      lcd.setCursor(0, 1);
-      lcd.print("ARMATA");
+      printStatoBomba("ARMATA");
       gameStartTime = millis();
       GAME_DURATION = 60000 * minuti_det;
       break;  // attivare il conto alla rovescia
@@ -97,7 +93,7 @@ void cerca_e_distruggi() {
           val = millis() - pressStart;
           Serial.println(val);
           if (val > defuseTime) {
-            printDisinnesca();
+            printStatoBomba("DISINNESCATA");
             timerDone = true;
             timerRunning = false;
             tone(BUZZER_PIN, 1000, 2000);
