@@ -44,7 +44,7 @@ void bomba() {
           ticker(remaining);
           updateProgressBar(val, defuseTime);
           if (val > defuseTime) {
-            printDisinnesca();
+            printStatoBomba("DISINNESCATA");
             timerDone = true;
             timerRunning = false;
             tone(BUZZER_PIN, 1000, 2000);
@@ -69,11 +69,7 @@ void bomba() {
     //questo if si occupa di far terminare la partita se scade il tempo
     if (elapsed > GAME_DURATION) {
       delay(1000);
-      lcd.clear();
-      lcd.setCursor(0, 0);
-      lcd.print("BOMBA");
-      lcd.setCursor(0, 1);
-      lcd.print("ESPLOSA");
+      printStatoBomba("ESPLOSA");
       delay(10000);
       menu();
       return;

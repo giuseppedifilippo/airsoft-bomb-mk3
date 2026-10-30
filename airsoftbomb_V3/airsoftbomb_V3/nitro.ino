@@ -185,10 +185,8 @@ void nitro() {
   gameStartTime = millis();
   while (true) {
     if (controllaADXL345(SOGLIA_G, DURATA_MIN_MS)) {
-      lcd.clear();
       beep();
-      lcd.setCursor(0, 0);
-      lcd.print("BOMBA ESPLOSA");
+      printStatoBomba("ESPLOSA");
       delay(1000);
       break;
     }
