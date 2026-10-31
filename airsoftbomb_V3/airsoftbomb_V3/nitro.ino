@@ -206,8 +206,7 @@ void nitro() {
     }
   }
   //SEQUENZA DI CHIUSURA
-  lcd.clear();
-  lcd.print("premi A per restart");
+  pulisciescrivi("premi A per restart", 0, 0);
   while (true) {
     char customKey = customKeypad.getKey();
     if (customKey == 'A') {

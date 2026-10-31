@@ -5,11 +5,8 @@ nel caso che la bomba venga piazzata la squadra di difesa deve disarmare la bomb
 del timer di detonazione, sarebbe meglio se implemento la radio altrimenti non ha senso la giocata*/
 
 void cerca_e_distruggi() {
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("tempo");
-  lcd.setCursor(0, 1);
-  lcd.print("partita");
+  pulisciescrivi("tempo", 0, 0);
+  scrivi("partita", 0, 1);
   delay(1000);
   KeyState state = IDLE;
   unsigned long pressStart = 0;
@@ -18,11 +15,8 @@ void cerca_e_distruggi() {
   int tmp = inputTimer();
   unsigned long GAME_DURATION = 60000 * tmp;  //tempo totale della partita
   Serial.println(GAME_DURATION);
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("timer");
-  lcd.setCursor(0, 1);
-  lcd.print("detonazione");
+  pulisciescrivi("timer", 0, 0);
+  scrivi("detonazione", 0, 1);
   delay(1000);
   int minuti_det = inputTimer();  // tempo del detonatore
   //finta sequena di armamento, basta premere 7 tasti a caso e la bomba si arma, giusto per fare una cosa stile CS
@@ -47,8 +41,7 @@ void cerca_e_distruggi() {
     }
     if (count == 1) {
       //lcd.clear();
-      lcd.setCursor(0, 3);
-      lcd.print("ARMAMENTO");
+      scrivi("ARMAMENTO", 0, 3);
       lcd.setCursor(count, 1);
     }
     char customKey = customKeypad.getKey();
@@ -56,8 +49,7 @@ void cerca_e_distruggi() {
       continue;
     } else {
       Serial.println(customKey);
-      lcd.setCursor(count, 1);
-      lcd.print(customKey);
+      scrivi(customKey, count, 1);
       tone(BUZZER_PIN, 800, 100);
       count += 1;
     }

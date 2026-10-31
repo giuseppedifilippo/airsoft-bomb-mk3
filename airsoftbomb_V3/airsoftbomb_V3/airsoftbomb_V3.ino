@@ -69,12 +69,9 @@ void setup() {
   lcd.clear();
   delay(50);
   lcd.print("Difilippo");
-  lcd.setCursor(0, 1);  //param1 = X   param2 = Y
-  lcd.print("Industries &");
-  lcd.setCursor(0, 2);
-  lcd.print("Benassi");
-  lcd.setCursor(0, 3);
-  lcd.print("Productions");
+  scrivi("Industries &", 0,1)
+  scrivi("Benassi", 0,2);
+  scrivi("Productions", 0,3);
   delay(2000);
   menu();
 }
@@ -84,13 +81,11 @@ void loop() {
   if (customKey == '#' && index < 5) {
     index += 1;
     beep();
-    lcd.setCursor(0, 1);
-    lcd.print(modes[index]);
+    scrivi(modes[index], 0, 1);
   } else if (customKey == '*' && index >= 1) {
     beep();
     index -= 1;
-    lcd.setCursor(0, 1);
-    lcd.print(modes[index]);
+    scrivi(modes[index], 0, 1);
   } else if (customKey == 'A') {
     beep();
     switch (index) {

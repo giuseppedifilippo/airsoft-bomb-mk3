@@ -126,18 +126,15 @@ void aggiornaCountdown(unsigned long remaining) {
 
   if (memcmp(line, lastLine, 16) != 0) {
     memcpy(lastLine, line, 16);
-    lcd.setCursor(0, 0);
-    lcd.print(line);
+    scrivi(line, 0, 0);
   }
 }
 
 //sequenza di input per timer generico, ritorna il valore per il timer come int non chiama un funzione timer
 int inputTimer() {
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("imposta timer");
-  lcd.setCursor(2, 1);
-  lcd.print("mm conferma(A)");
+  pulisciescrivi("imposta timer", 0, 0);
+  scrivi("mm conferma(A)", 2, 1);
+
   lcd.setCursor(0, 1);
   lcd.cursor();
   while (true) {
@@ -188,10 +185,8 @@ int inputTimer() {
 
 //funzione che crea un countdown universale prima di avviare la partita effettiva
 void preGame(unsigned long COUNTDOWN) {
-  lcd.setCursor(0, 0);
-  lcd.print("PREMI B");
-  lcd.setCursor(0, 1);
-  lcd.print("PER AVVIARE");
+  pulisciescrivi("PREMI B", 0, 0);
+  scrivi("PER AVVIARE", 0, 1);
   bool startCountdown = false;
   unsigned long startTime = 0;
 
@@ -228,28 +223,29 @@ void beep() {
 
 //funzione da invocare prima di chiudere la funzione di una modalità e tornare al menù di partenza
 void menu() {
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("<*    SELEZIONA   #>");
-  lcd.setCursor(0, 1);
-  lcd.print(modes[index]);
-  lcd.setCursor(0,2);
-  lcd.print("    (A) CONFERMA    ");
+  pulisciescrivi("<*    SELEZIONA   #>", 0, 0);
+  scrivi(modes[index], 0, 1);
+  scrivi("    (A) CONFERMA    ", 0, 2);
   return;
 }
 
 void printVincitore(const String& vincitore){
-  lcd.clear();
-  lcd.setCursor(4,0);
-  lcd.print("VINCE");
-  lcd.setCursor(4,1);
-  lcd.print(vincitore);
+  pulisciescrivi("VINCE", 4, 0);
+  scrivi(vincitore, 4, 1);
 }
 
 void printStatoBomba(const String& stato){
+  pulisciescrivi("BOMBA", 5, 2);
+  scrivi(stato, 4, 3);
+}
+
+void pulisciescrivi (const String& testo, int colonna, int riga) {
   lcd.clear();
-  lcd.setCursor(5,2);
-  lcd.print("BOMBA");
-  lcd.setCursor(4,3);
-  lcd.print(stato);
+  lcd.setCursor(colonna, riga);
+  lcd.print(testo);
+}
+
+void scrivi (const String& testo, int colonna, int riga) {
+  lcd.setCursor(colonna, riga);
+  lcd.print(testo);
 }
