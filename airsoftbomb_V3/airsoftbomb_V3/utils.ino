@@ -238,6 +238,7 @@ void printVincitore(char* vincitore){
 void printStatoBomba(char* stato){
   pulisciescrivi("BOMBA", 5, 2);
   scrivi(stato, 4, 3);
+  noTone(BUZZER_PIN);
 }
 
 void pulisciescrivi (char* testo, int colonna, int riga) {
