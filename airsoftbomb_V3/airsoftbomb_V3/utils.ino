@@ -207,6 +207,7 @@ void preGame(unsigned long COUNTDOWN) {
       aggiornaCountdown(remaining);
       if (elapsed > COUNTDOWN) {
         tone(BUZZER_PIN, 1200, 1000);
+        sirena();
         return;
       }
     }
@@ -229,23 +230,27 @@ void menu() {
   return;
 }
 
-void printVincitore(const String& vincitore){
+void printVincitore(char* vincitore){
   pulisciescrivi("VINCE", 4, 0);
   scrivi(vincitore, 4, 1);
 }
 
-void printStatoBomba(const String& stato){
+void printStatoBomba(char* stato){
   pulisciescrivi("BOMBA", 5, 2);
   scrivi(stato, 4, 3);
 }
 
-void pulisciescrivi (const String& testo, int colonna, int riga) {
+void pulisciescrivi (char* testo, int colonna, int riga) {
   lcd.clear();
   lcd.setCursor(colonna, riga);
   lcd.print(testo);
 }
 
-void scrivi (const String& testo, int colonna, int riga) {
+void scrivi (char* testo, int colonna, int riga) {
   lcd.setCursor(colonna, riga);
   lcd.print(testo);
+}
+
+void sirena() {
+  tone(SIRENA, 1000, 2000);
 }

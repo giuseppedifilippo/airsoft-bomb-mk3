@@ -1,5 +1,5 @@
 /*la squadra di attacco deve trasportare a passo moderato la valigetta a un obiettivo entro il tempo limite*/
-
+//magari modificabile per usare un sistema ad accumulo dove ogni sussulto aggiunge a un counter che riempito indica la sconfitta
 
 const float SOGLIA_G = 0.5;               // soglia in g (1 g = 9.81 m/s^2)
 const unsigned long DURATA_MIN_MS = 10;  // tempo minimo continuo sopra soglia

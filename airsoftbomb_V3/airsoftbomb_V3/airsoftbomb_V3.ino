@@ -43,7 +43,7 @@ String forbidden = "*#ABCD";  //caratteri da ignorare per certe sequenze di inpu
 
 // ---- PIN CONFIGURATION ----
 const int BTN_PIN[3] = { 45, 46, 47 };
-const String BTN_NAME[3] = { "AMERICA", "CINA", "RUSSIA" };
+const char* BTN_NAME[3] = { "AMERICA", "CINA", "RUSSIA" };
 
 //ARRAY DELLE VARIE MODALITà
 char* modes[] = {
@@ -69,7 +69,7 @@ void setup() {
   lcd.clear();
   delay(50);
   lcd.print("Difilippo");
-  scrivi("Industries &", 0,1)
+  scrivi("Industries &", 0,1);
   scrivi("Benassi", 0,2);
   scrivi("Productions", 0,3);
   delay(2000);
