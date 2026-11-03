@@ -43,13 +43,21 @@ void bomba() {
           ticker(remaining);
           updateProgressBar(val, defuseTime);
           if (val > defuseTime) {
+            printVincitore("ATTACCO");
             printStatoBomba("DISINNESCATA");
             timerDone = true;
             timerRunning = false;
-            tone(BUZZER_PIN, 1000, 2000);
             delay(10000);
-            menu();
-            return;
+            //SEQUENZA DI CHIUSURA
+            lcd.clear();
+            lcd.print("premi A per restart");
+            while (true) {
+              char customKey = customKeypad.getKey();
+              if (customKey == 'A') {
+                menu();
+                return;
+              }
+            }
             break;
           }
       }
@@ -69,9 +77,19 @@ void bomba() {
     //questo if si occupa di far terminare la partita se scade il tempo
     if (elapsed > GAME_DURATION) {
       delay(1000);
+      printVincitore("DIFESA");
       printStatoBomba("ESPLOSA");
       delay(10000);
-      menu();
+      //SEQUENZA DI CHIUSURA
+      lcd.clear();
+      lcd.print("premi A per restart");
+      while (true) {
+        char customKey = customKeypad.getKey();
+        if (customKey == 'A') {
+          menu();
+          return;
+        }
+      }
       return;
     }
   }

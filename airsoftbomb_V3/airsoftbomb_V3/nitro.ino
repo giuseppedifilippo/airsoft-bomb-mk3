@@ -20,6 +20,7 @@ bool controllaADXL345(float sogliaG = 1.5,
   const uint8_t REG_DATAX0 = 0x32;
   const float SCALA_G = 0.0039;                 // 3.9 mg/LSB in full resolution
   const unsigned long PERIODO_LETTURA_MS = 10;  // ~100 letture al secondo
+  const float ALPHA = 0.98;                     // filtro gravità: più alto = più lento ad adattarsi
   const char NOMI_ASSI[3] = { 'X', 'Y', 'Z' };
 
   // ---------- Stato interno (mantenuto tra una chiamata e l'altra) ----------
@@ -122,7 +123,11 @@ bool controllaADXL345(float sogliaG = 1.5,
 
   float v[3];
   if (!leggiAssi(v)) return false;
-  for (int i = 0; i < 3; i++) v[i] -= offset[i];  // offset = 0 se non compensato
+  // offset = stima della gravità su ogni asse, aggiornata in continuo (passa-basso)
+  for (int i = 0; i < 3; i++) {
+    if (compensaGravita) offset[i] = ALPHA * offset[i] + (1.0 - ALPHA) * v[i];
+    v[i] -= offset[i];
+  }
 
   // ---------- Controllo soglia + durata su ogni asse ----------
   bool nuovoAvviso = false;
@@ -184,10 +189,15 @@ void nitro() {
   const unsigned long GAME_DURATION = 60000 * tmp;
   unsigned long gameStartTime = 0;
   preGame(5000);
+  // allinea il filtro della gravità alla posizione attuale prima di iniziare
+  unsigned long t0 = millis();
+  while (millis() - t0 < 1500) controllaADXL345(SOGLIA_G, DURATA_MIN_MS);
   gameStartTime = millis();
   while (true) {
+    bool pressed = (digitalRead(BTN_PIN[1]) == LOW);
     if (controllaADXL345(SOGLIA_G, DURATA_MIN_MS)) {
       beep();
+      printVincitore("DIFESA");
       printStatoBomba("ESPLOSA");
       delay(1000);
       break;
@@ -201,6 +211,13 @@ void nitro() {
     if (elapsed > GAME_DURATION) {
       delay(1000);
       printVincitore("DIFESA");
+      printStatoBomba("NON PIAZZATA");
+      delay(10000);
+      break;
+    }
+    if (pressed) {
+      printVincitore("ATTACCO");
+      printStatoBomba("PIAZZATA");
       delay(10000);
       break;
     }

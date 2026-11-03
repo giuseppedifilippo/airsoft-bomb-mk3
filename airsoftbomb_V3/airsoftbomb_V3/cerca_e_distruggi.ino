@@ -37,6 +37,7 @@ void cerca_e_distruggi() {
       // BOMBA NON PIANTATA PARTITA TERMINATA VINCE SQUADRA DIFESA
       printVincitore("DIFESA");
       delay(10000);
+      menu();
       return;
     }
     if (count == 1) {
@@ -49,12 +50,14 @@ void cerca_e_distruggi() {
       continue;
     } else {
       Serial.println(customKey);
-      scrivi(customKey, count, 1);
+      lcd.setCursor(count, 2);
+      lcd.print(customKey);
       tone(BUZZER_PIN, 800, 100);
       count += 1;
     }
     if (count > 7) {
       lcd.setCursor(0, 3);
+      lcd.clear();
       printStatoBomba("ARMATA");
       gameStartTime = millis();
       GAME_DURATION = 60000 * minuti_det;
@@ -88,11 +91,13 @@ void cerca_e_distruggi() {
           Serial.println(val);
           updateProgressBar(val, defuseTime);
           if (val > defuseTime) {
+            printVincitore("DIFESA");
             printStatoBomba("DISINNESCATA");
             timerDone = true;
             timerRunning = false;
             tone(BUZZER_PIN, 1000, 2000);
             delay(4000);
+            menu();
             return;
           }
 
@@ -115,6 +120,7 @@ void cerca_e_distruggi() {
     //LA BOMBA è ESPLOSA SQUADRA ATTACCO VINCE
     if (elapsed > GAME_DURATION) {
       printVincitore("ATTACCO");
+      printStatoBomba("ESPLOSA");
       delay(10000);
       menu();
       return;

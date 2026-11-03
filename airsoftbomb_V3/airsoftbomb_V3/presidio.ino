@@ -25,6 +25,8 @@ void presidio() {
                    ARMED };
   GameState gameState = WAITING;
   preGame(5000);
+  pulisciescrivi("PREMI UN PULSANTE", 0,0);
+  scrivi("PER AVVIARE",0,1);
   while (true) {
     bool pressed[3];
     for (int i = 0; i < 3; i++) {
@@ -137,8 +139,7 @@ void presidio() {
   }
 
   //SEQUENZA DI CHIUSURA
-  lcd.clear();
-  lcd.print("premi A per restart");
+ pulisciescrivi("premi A per restart", 0, 0);
   while (true) {
     char customKey = customKeypad.getKey();
     if (customKey == 'A') {

@@ -233,12 +233,15 @@ void menu() {
 void printVincitore(char* vincitore){
   pulisciescrivi("VINCE", 4, 0);
   scrivi(vincitore, 4, 1);
+  sirena();
+  noTone(BUZZER_PIN);
 }
 
 void printStatoBomba(char* stato){
-  pulisciescrivi("BOMBA", 5, 2);
+  scrivi("BOMBA", 5, 2);
   scrivi(stato, 4, 3);
   noTone(BUZZER_PIN);
+  //sirena();
 }
 
 void pulisciescrivi (char* testo, int colonna, int riga) {
@@ -253,5 +256,7 @@ void scrivi (char* testo, int colonna, int riga) {
 }
 
 void sirena() {
-  tone(SIRENA, 1000, 2000);
+  digitalWrite(SIRENA, HIGH);
+  delay(500);
+  digitalWrite(SIRENA, LOW);
 }
