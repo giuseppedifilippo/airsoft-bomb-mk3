@@ -10,7 +10,7 @@ void cerca_e_distruggi() {
   delay(1000);
   KeyState state = IDLE;
   unsigned long pressStart = 0;
-  int defuseTime = 20000;  //tempo in ms per il disinnesco
+  
   unsigned long val = 0;   // ms di pressione in tempo reale
   int tmp = inputTimer();
   unsigned long GAME_DURATION = 60000 * tmp;  //tempo totale della partita
@@ -28,6 +28,7 @@ void cerca_e_distruggi() {
   preGame(5000);
   unsigned long gameStartTime = millis();
   while (true) {
+    aggiornaSirena();
     unsigned long elapsed = millis() - gameStartTime;
     unsigned long remaining = (elapsed < GAME_DURATION)
                                 ? GAME_DURATION - elapsed
@@ -36,7 +37,7 @@ void cerca_e_distruggi() {
     if (elapsed > GAME_DURATION) {
       // BOMBA NON PIANTATA PARTITA TERMINATA VINCE SQUADRA DIFESA
       printVincitore("DIFESA");
-      delay(10000);
+      attesa(10000);
       menu();
       return;
     }
@@ -67,6 +68,7 @@ void cerca_e_distruggi() {
 
   //questo loop viene attivato solo se la bomba viene piantata
   while (true) {
+    aggiornaSirena();
     bool pressed = (digitalRead(BTN_PIN[1]) == LOW);
     unsigned long elapsed = millis() - gameStartTime;
     unsigned long remaining = (elapsed < GAME_DURATION)
@@ -96,7 +98,7 @@ void cerca_e_distruggi() {
             timerDone = true;
             timerRunning = false;
             tone(BUZZER_PIN, 1000, 2000);
-            delay(4000);
+            attesa(4000);
             menu();
             return;
           }
@@ -121,7 +123,7 @@ void cerca_e_distruggi() {
     if (elapsed > GAME_DURATION) {
       printVincitore("ATTACCO");
       printStatoBomba("ESPLOSA");
-      delay(10000);
+      attesa(10000);
       menu();
       return;
     }

@@ -10,7 +10,7 @@ respawn illimitati con cooldown raccomandati */
 void presidio() {
   lcd.clear();
   int tmp = inputTimer();
-  const unsigned long GAME_DURATION = 60000 * tmp;
+  const unsigned long GAME_DURATION = MINUTO * tmp;
   lcd.setCursor(0, 0);
   int currentOwner = -1;                         // Chi ha il possesso (-1 = nessuno)
   unsigned long possessTime[3] = { 0, 0, 0 };    // Tempo possesso accumulato per ogni giocatore
@@ -24,10 +24,11 @@ void presidio() {
                    FINISHED,
                    ARMED };
   GameState gameState = WAITING;
-  preGame(5000);
+  preGame(inputTimer());
   pulisciescrivi("PREMI UN PULSANTE", 0,0);
   scrivi("PER AVVIARE",0,1);
   while (true) {
+    aggiornaSirena();
     bool pressed[3];
     for (int i = 0; i < 3; i++) {
       pressed[i] = (digitalRead(BTN_PIN[i]) == LOW);
@@ -85,7 +86,7 @@ void presidio() {
             tone(BUZZER_PIN, 2000, 2000);
             printVincitore(BTN_NAME[winner]);
             gameState = FINISHED;
-            delay(10000);
+            attesa(10000);
             menu();
             return;
           }

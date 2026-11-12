@@ -6,6 +6,7 @@ DISPOTIVO CHE FUNGE DA VARI TIPI DI OBIETTIVO PER VARIE GIOCATE SOFTAIR
 #include <Keypad.h>
 #include <EEPROM.h>
 #include <Wire.h>
+#include <DFRobotDFPlayerMini.h>
 
 //inizializza istanza lcd
 LiquidCrystal_I2C lcd(0x27, 20, 4);
@@ -30,11 +31,16 @@ Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS)
 
 
 //VARIABILI UNIVERSALI PER IL TIMER (valori in millisecondi)
+const unsigned long MINUTO = 60000;
 unsigned long timerStart = 0;
 unsigned long timerDuration = 0;
 bool timerRunning = false;
 bool timerDone = false;
 int minuti = 0;
+
+//VARIABILI GLOBALI PER LA LETTURA/SCRITTURA IN EEPROM
+unsigned int defuseTime = 20000;  //tempo in ms per il disinnesco
+
 
 //Variabili per il sistema di input
 bool check = false;
@@ -52,6 +58,7 @@ char* modes[] = {
   "       NITRO       ",
   "  CERCA&DISTRUGGI  ",
   "     COUNTDOWN     ",
+  "     UPLINK(wip)   ",
 };
 
 
@@ -70,14 +77,15 @@ void setup() {
   lcd.clear();
   delay(50);
   lcd.print("Difilippo");
-  scrivi("Industries &", 0,1);
-  scrivi("Benassi", 0,2);
-  scrivi("Productions", 0,3);
+  scrivi("Industries &", 0, 1);
+  scrivi("Benassi", 0, 2);
+  scrivi("Productions", 0, 3);
   delay(2000);
   menu();
 }
 
 void loop() {
+  aggiornaSirena();
   char customKey = customKeypad.getKey();
   if (customKey == '#' && index < 5) {
     index += 1;
@@ -104,6 +112,9 @@ void loop() {
         break;
       case 4:
         timer();
+        break;
+      case 5:
+        uplink();
         break;
     }
   }

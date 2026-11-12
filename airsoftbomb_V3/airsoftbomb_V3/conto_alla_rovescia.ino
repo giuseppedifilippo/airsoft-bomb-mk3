@@ -22,6 +22,7 @@ void timer() {
   preGame(green_light);
    unsigned long gameStartTime = millis(); 
   while (true) {
+    aggiornaSirena();
     unsigned long elapsed = millis() - gameStartTime;
     unsigned long remaining = (elapsed < GAME_DURATION)
                                 ? GAME_DURATION - elapsed

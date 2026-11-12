@@ -255,8 +255,42 @@ void scrivi (char* testo, int colonna, int riga) {
   lcd.print(testo);
 }
 
+//SIRENA NON BLOCCANTE: sirena() la accende e torna subito,
+//aggiornaSirena() va chiamata nei loop e la spegne allo scadere di DURATA_SIRENA
+const unsigned long DURATA_SIRENA = 3000;
+unsigned long sirenaStart = 0;
+bool sirenaAttiva = false;
+
 void sirena() {
   digitalWrite(SIRENA, HIGH);
-  delay(500);
-  digitalWrite(SIRENA, LOW);
+  sirenaStart = millis();
+  sirenaAttiva = true;
+}
+
+void aggiornaSirena() {
+  if (sirenaAttiva && millis() - sirenaStart >= DURATA_SIRENA) {
+    digitalWrite(SIRENA, LOW);
+    sirenaAttiva = false;
+  }
+}
+
+//da usare al posto di delay() quando la sirena può essere accesa
+void attesa(unsigned long ms) {
+  unsigned long start = millis();
+  while (millis() - start < ms) {
+    aggiornaSirena();
+  }
+}
+
+void restart() {
+  scrivi("premi A per tornare", 0, 2);
+    scrivi("menù               ", 0,3);
+  while(true) {
+    aggiornaSirena();
+    char customKey = customKeypad.getKey();
+    if (customKey == 'A') {
+      menu();
+      return;
+    }
+  }
 }

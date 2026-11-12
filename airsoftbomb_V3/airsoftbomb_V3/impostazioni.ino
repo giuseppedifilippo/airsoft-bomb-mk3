@@ -5,22 +5,19 @@ lista di possibili valori da salvare in mameria
 -beep si/no della bomba quando attiva
 -sequenza di disinnesco con codice/pressione pulsante
 -finestra allerta buzzer
--sirena on/off(ci metto un interrutore fisico)
+
 IN DISUSO PER LAVORO FUTURO
 */
-/*
+
 char* settings[] = { "tempo disarmo", "beep bomba", "tipo disinnesco", "tempo buzzer" };
 char* disinnesco[] = { "codice", "pressione", "off" };
 void impostazioni() {
   int setIndex = 0;
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("<* SELEZIONA  #>");
-  lcd.setCursor(0, 1);
-  lcd.print(settings[setIndex]);
+  pulisciescrivi("<*    SELEZIONA   #>", 0, 0);
+  scrivi(settings[setIndex], 0,1);
   while (true) {
     char customKey = customKeypad.getKey();
-    if (customKey == 'B') { //salva le eventuali modifiche e torna al menù iniziale
+    if (customKey == 'B') {  //salva le eventuali modifiche e torna al menù iniziale
       updateSettings();
       menu();
       return;
@@ -36,13 +33,11 @@ void impostazioni() {
       lcd.print(settings[setIndex]);
     } else if (customKey == 'A') {
       switch (setIndex) {
-        
       }
     }
-    
   }
 }
 //aggiorna i valori salvati sulla eeprom
 void updateSettings() {
+  EEPROM.update(0, defuseTime);
 }
-*/

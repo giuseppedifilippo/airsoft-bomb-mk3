@@ -1,7 +1,7 @@
 /*la squadra di attacco deve trasportare a passo moderato la valigetta a un obiettivo entro il tempo limite*/
 //magari modificabile per usare un sistema ad accumulo dove ogni sussulto aggiunge a un counter che riempito indica la sconfitta
 
-const float SOGLIA_G = 0.5;               // soglia in g (1 g = 9.81 m/s^2)
+const float SOGLIA_G = 1.5;               // soglia in g (1 g = 9.81 m/s^2)
 const unsigned long DURATA_MIN_MS = 10;  // tempo minimo continuo sopra soglia
 
 
@@ -79,6 +79,7 @@ bool controllaADXL345(float sogliaG = 1.5,
       Serial.print(F("ERRORE: ADXL345 non trovato (DEVID=0x"));
       Serial.print(id, HEX);
       Serial.println(F("). Controlla collegamenti e indirizzo."));
+      pulisciescrivi("ERRORE ADXL345",0,0);
       stato = ERRORE;
       return false;
     }
@@ -194,12 +195,13 @@ void nitro() {
   while (millis() - t0 < 1500) controllaADXL345(SOGLIA_G, DURATA_MIN_MS);
   gameStartTime = millis();
   while (true) {
+    aggiornaSirena();
     bool pressed = (digitalRead(BTN_PIN[1]) == LOW);
     if (controllaADXL345(SOGLIA_G, DURATA_MIN_MS)) {
       beep();
       printVincitore("DIFESA");
       printStatoBomba("ESPLOSA");
-      delay(1000);
+      attesa(1000);
       break;
     }
     unsigned long elapsed = millis() - gameStartTime;
@@ -212,19 +214,20 @@ void nitro() {
       delay(1000);
       printVincitore("DIFESA");
       printStatoBomba("NON PIAZZATA");
-      delay(10000);
+      attesa(10000);
       break;
     }
     if (pressed) {
       printVincitore("ATTACCO");
       printStatoBomba("PIAZZATA");
-      delay(10000);
+      attesa(10000);
       break;
     }
   }
   //SEQUENZA DI CHIUSURA
   pulisciescrivi("premi A per restart", 0, 0);
   while (true) {
+    aggiornaSirena();
     char customKey = customKeypad.getKey();
     if (customKey == 'A') {
       menu();
